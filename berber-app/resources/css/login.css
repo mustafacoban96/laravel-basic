@@ -1,4 +1,4 @@
-.register-box {
+.login-box {
 	background-color: #fff;
 	margin: 50px auto;
 	padding: 20px;
@@ -45,5 +45,16 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-	background-color: #3e8e41;
+	background-color: #5c625c;
+}
+
+.check-area{
+    margin-top: 2%;
+    font-family: system-ui, sans-serif;
+    font-size: 1rem;
+    font-weight:normal;
+    line-height: 1.1;
+    display:flow-root;
+    grid-template-columns: 1em auto;
+    gap: 0.4em;
 }

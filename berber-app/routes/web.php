@@ -21,3 +21,13 @@ Route::get('/', function () {
 Route::get('/admin', function(){
     return view('posts.index');
 });
+
+
+Route::get('/signup' , function(){
+
+    return view('auth.register');
+});
+
+Route::get('/login' , function(){
+    return view('auth.login');
+});
