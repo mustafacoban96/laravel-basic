@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     @vite(['resources/css/register.css', 'resources/js/app.js'])
-    @vite(['resources/css/login.css', 'resources/js/app.js'])
+    @vite(['resources/css/login.css', 'resources/css/mainpage.css']);
 
 </head>
 <body>

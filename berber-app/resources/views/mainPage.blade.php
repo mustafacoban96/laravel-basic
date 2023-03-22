@@ -2,5 +2,7 @@
 
 
 @section('content')
-    <h1>Ana  Sayfa</h1>
+   <div class=navbar>
+    
+   </div>
 @endsection

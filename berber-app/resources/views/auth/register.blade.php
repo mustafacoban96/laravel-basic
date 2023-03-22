@@ -7,9 +7,9 @@
    
     <form action="{{route('register')}}" method="POST">
         @csrf
-        <input type="text" id="username" name="username" placeholder="Username : name.surname" value="{{old('username')}}">
-        @if ($errors->has('username'))
-            <span class="text-danger">{{ $errors->first('username') }}</span>
+        <input type="text" id="name" name="name" placeholder="name : name.surname" value="{{old('name')}}">
+        @if ($errors->has('name'))
+            <span class="text-danger">{{ $errors->first('name') }}</span>
         @endif
         <input type="email" id="email" name="email" placeholder="Email : example@email.com" value="{{old('email')}}">
         @if ($errors->has('email'))

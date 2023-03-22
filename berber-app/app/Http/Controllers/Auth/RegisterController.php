@@ -4,12 +4,15 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
+   
+    
     public function index(){
         return view('auth.register');
     }
@@ -18,22 +21,23 @@ class RegisterController extends Controller
         //validation
         
         $this->validate($request ,[
-            'username' => ['required' , 'string', 'max:255'],
+            'name' => ['required' , 'string', 'max:255'],
             'email' => ['required' , 'string', 'email', 'max:255','unique:customer,email' ],
             'password' => ['required', 'confirmed']
         ]);
 
         //store user
 
-        Customer::create([
-            'username' => $request->username,
+        User::create([
+            'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->passwordvalue)
+            'password' => Hash::make($request->password)
         ]);
 
         // sign the user in
         auth()->attempt($request->only('email','password'));
-
+        
+        
 
 
         // redirect
