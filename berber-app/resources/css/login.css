@@ -58,3 +58,11 @@ input[type="submit"]:hover {
     grid-template-columns: 1em auto;
     gap: 0.4em;
 }
+
+.forgot-password{
+	font-family: system-ui, sans-serif;
+	display: inline;
+	margin-top: 2%;
+	margin-left: 2%;
+	margin-bottom: 2%;
+}

@@ -1,5 +1,8 @@
 <?php
+namespace App\Http\Controllers;
 
+
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,11 +26,7 @@ Route::get('/admin', function(){
 });
 
 
-Route::get('/signup' , function(){
 
-    return view('auth.register');
-});
-
-Route::get('/login' , function(){
-    return view('auth.login');
-});
+Route::get('/register' ,[RegisterController::class, 'index'])->name('register');
+Route::post('/register' ,[RegisterController::class, 'store']);
+Route::get('/mainpage' , [MainPageController::class, 'index'])->name('mainPage');

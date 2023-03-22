@@ -47,3 +47,13 @@ input[type="submit"] {
 input[type="submit"]:hover {
 	background-color: #3e8e41;
 }
+
+
+.text-danger{
+	font-size: 0.9em;
+	margin-top: 3px;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	color: red;
+	font-weight: bold;
+
+}
