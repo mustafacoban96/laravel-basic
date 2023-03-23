@@ -1,0 +1,114 @@
+.navbar-outer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-inner{
+    display: inline-flex;
+    flex-direction: row;
+    width: 98%;
+    height: 80%;
+    background-color: rgb(245, 243, 243);
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+   
+    
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 20%;
+    height: 100%;
+    align-items: start;
+   
+}
+.logo-link{
+    display: inline;
+    text-decoration: none;
+    margin-left: 5%;
+    
+}
+.logo-title{
+    display: inline;
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+    margin-left: 5%;
+    font-family: 'Alkatra', cursive;
+}
+
+.reservation{
+    display: flex;
+    width: 40%;
+    height: 100%;
+    /* background-color: lightgreen; */
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.btn-reserve{
+    width: 70%;
+    height: 70%;
+    background-color:rgb(8, 92, 248);
+    border: none;
+    border-radius: 3px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color:aliceblue;
+    
+}
+
+.btn-reserve:active{
+    background-color:rgb(90, 145, 248);
+}
+.other-buttons{
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    height: 100%;
+    text-align: center;
+    justify-content:space-around;
+    font-family: 'Alkatra', cursive;
+    
+}
+
+
+
+.btn{
+    width: 80%;
+    height: 60%;
+    align-self: center;
+    border: none;
+    border-radius: 3px;
+    background-color:rgb(8, 92, 248);
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+.btn:active{
+   
+    background-color:rgb(90, 145, 248);
+}
+
+.reservation-form{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    margin: 0%;
+    justify-content: center;
+
+}
+.other-button-form{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    margin: 0%;
+    justify-content: center;
+}
