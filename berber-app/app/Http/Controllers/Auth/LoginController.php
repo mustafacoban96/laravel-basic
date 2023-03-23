@@ -14,17 +14,16 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
-
-
-
     public function store(Request $request){
         $user = $request->validate([
-            'email' => ['required' , 'string', 'email', 'max:255','exists:users,email'],
+            'email' => ['required' , 'string', 'email', 'max:255'],
             'password' => ['required']
         ]);
 
-        dd(Auth::validate($user));
+        if(!Auth::validate($user)){
+            return back()->with('error' , 'email or password wrong');
+        }
         
-        
+        return redirect()->route('mainPage');
     }
 }

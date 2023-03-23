@@ -16,14 +16,9 @@ class MainPageController extends Controller
 
 
 
-    public function destroy(){
-
-        if(Auth::check()){
-            Auth::logout();
-            return redirect()->action([RegisterController::class, 'index']);
-        }
+    
 
        
 
-    }
+    
 }
