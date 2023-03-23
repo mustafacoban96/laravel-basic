@@ -17,13 +17,20 @@
             </div>
             <div class="other-buttons">
                <p class="user-name">Mustafa</p>
-               <form  class=other-button-form  action="">
-                  <button class="btn">Register</button>
-               </form>
-               <form  class=other-button-form  action="">
-                  <button class="btn">Log out</button>
-               </form>
-               
+               @if (Auth::check())
+                  <form  class=other-button-form  action="{{route('register')}}" method="GET">
+                     <button class="btn">Register</button>
+                     @php
+                        Auth::logout();
+                     @endphp
+                  </form>
+                  <form  class=other-button-form  action="{{route('login')}}">
+                     <button class="btn">Log out</button>
+                     @php
+                        Auth::logout();
+                     @endphp
+                  </form>
+               @endif 
             </div>
       </div>
    </div>

@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
-
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -51,6 +51,9 @@ Route::get('/admin', function(){
 
 Route::post('/register' ,[RegisterController::class, 'store']);
 Route::get('/mainpage' , [MainPageController::class, 'index'])->name('mainPage')->middleware('auth');
-
 Route::get('/register' ,[RegisterController::class, 'index'])->name('register');
+Route::get('/login', [LoginController::class , 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'store']);
+
+
 

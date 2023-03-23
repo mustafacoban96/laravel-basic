@@ -24,5 +24,6 @@
         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password_confirmation" placeholder="Confirm Password">
         <input type="submit" value="Register">
     </form>
+    
 </div>
 @endsection
