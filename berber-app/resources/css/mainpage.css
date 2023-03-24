@@ -10,13 +10,10 @@
 .navbar-inner{
     display: inline-flex;
     flex-direction: row;
-    width: 98%;
+    width: 99%;
     height: 80%;
-    background-color: rgb(245, 243, 243);
-    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
-   
-    
+    background-color: rgb(13, 17, 23);
+    box-shadow:  0 4px 8px 0 rgba(84, 70, 70, 0.2), 0 6px 20px 0 rgba(47, 38, 38, 0.19);
 }
 
 .logo{
@@ -26,20 +23,29 @@
     width: 20%;
     height: 100%;
     align-items: start;
+    
    
 }
+
 .logo-link{
     display: inline;
     text-decoration: none;
     margin-left: 5%;
     
+    
+}
+.logo-img{
+    width: 100%;
+    
+    
 }
 .logo-title{
     display: inline;
     font-size: 1em;
-    color: rgb(0, 0, 0);
+    color:rgba(235, 37, 37, 0.896);
     margin-left: 5%;
-    font-family: 'Alkatra', cursive;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-weight: bolder;
 }
 
 .reservation{
@@ -54,17 +60,16 @@
 .btn-reserve{
     width: 70%;
     height: 70%;
-    background-color:rgb(8, 92, 248);
+    background-color:rgba(235, 37, 37, 0.896);
     border: none;
     border-radius: 3px;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     color:aliceblue;
-    
 }
 
 .btn-reserve:active{
-    background-color:rgb(90, 145, 248);
+    background-color:rgba(216, 86, 86, 0.896);
 }
 .other-buttons{
     display: flex;
@@ -72,15 +77,16 @@
     width: 40%;
     height: 100%;
     text-align: center;
-    justify-content:space-around;
+    justify-content:space-between;
     align-content: center;
-    
-    
 }
 
 .user-name{
-    font-size: 0.9em;
-    font-family: 'Alkatra', cursive;
+    font-size: 1.0em;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    color:rgba(235, 37, 37, 0.896);
+    font-weight:bolder;
+    
 }
 
 
@@ -91,7 +97,7 @@
     align-self: center;
     border: none;
     border-radius: 3px;
-    background-color:rgb(8, 92, 248);
+    background-color:rgba(235, 37, 37, 0.896);
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     color: aliceblue;
@@ -99,7 +105,7 @@
 
 .btn:active{
    
-    background-color:rgb(90, 145, 248);
+    background-color:rgba(216, 86, 86, 0.896);
 }
 
 .reservation-form{
@@ -111,10 +117,107 @@
 
 }
 .other-button-link{
-    display: flex;
+    display:inline-flex;
     width: 100%;
     height: 100%;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
+    text-decoration: none;  
 }
+
+
+
+
+.main-content{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: auto;
+    background-color:rgba(235, 37, 37, 0.896);
+    justify-content: center;
+    margin: 10%;
+    animation-name: main-content;
+    animation-duration: 8s;
+}
+
+
+
+@keyframes main-content {
+    from {background-color: rgb(15, 20, 27);}
+    to{background-color:rgba(235, 37, 37, 0.896);}
+}
+
+
+.footer{
+    display: inline-flex;
+    flex-direction: row;
+    width: 99%;
+    height: 30%;
+    background-color: rgb(13, 17, 23);
+    box-shadow:  0 4px 8px 0 rgba(93, 78, 78, 0.2), 0 6px 20px 0 rgba(93, 78, 78, 0.2);
+    justify-content:space-around;
+    align-items: center;
+    
+}
+
+
+.iletişim, .adres, .calisma-saatleri{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 70%;
+    line-height: 1%;
+    text-align: center;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-weight:lighter;
+    color: rgba(235, 37, 37, 0.896);
+}
+
+.social-media{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 30%;
+    justify-content:space-around;
+    align-items: center;
+
+}
+
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 15px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 40px;
+  }
+  
+  .fa-facebook:hover {
+    background: #3B5998;
+    color: white;
+  }
+  
+  .fa-twitter:hover {
+    background: #55ACEE;
+    color: white;
+  }
+  .fa-snapchat-ghost:hover {
+    background: #fffc00;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+  .fa-instagram:hover {
+    background: #8a3ab9;
+    color: white;
+  }
+
+  .fa-facebook,.fa-twitter,.fa-snapchat-ghost,.fa-instagram{
+    background-color:rgba(235, 37, 37, 0.896);
+    color: white;
+  }
+
+
+  
+

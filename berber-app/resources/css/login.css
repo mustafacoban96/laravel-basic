@@ -1,16 +1,18 @@
 .login-box {
-	background-color: #fff;
 	margin: 50px auto;
 	padding: 20px;
 	border-radius: 5px;
-	box-shadow: 0px 0px 10px #ddd;
+	background-color: rgb(13, 17, 23);
+    box-shadow:  0 4px 8px 0 rgba(84, 70, 70, 0.2), 0 6px 20px 0 rgba(47, 38, 38, 0.19);
 	width: 400px;
 }
 
 h1 {
 	text-align: center;
 	margin-top: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-weight: bolder;
+	color:rgba(235, 37, 37, 0.896);
 }
 
 form {
@@ -19,10 +21,10 @@ form {
 }
 
 
-
 input[type="text"],
 input[type="email"],
 input[type="password"] {
+	background-color:rgba(235, 37, 37, 0.896);
 	padding: 10px;
 	border: solid rgb(64, 61, 61) 1px;
 	border-radius: 5px;
@@ -30,9 +32,14 @@ input[type="password"] {
 	font-size: 13px;
 }
 
+::placeholder{
+	color:rgb(15, 20, 27);
+	opacity: 0.7;
+}
+
 input[type="submit"] {
     width: 50%;
-	background-color: #0b0b0b;
+	background-color:rgba(235, 37, 37, 0.896);
 	color: #fff;
 	padding: 10px;
 	border: none;
@@ -42,10 +49,11 @@ input[type="submit"] {
 	font-size: 16px;
 	cursor: pointer;
 	transition: background-color 0.3s ease;
+	
 }
 
 input[type="submit"]:hover {
-	background-color: #5c625c;
+	background-color:rgba(216, 86, 86, 0.896);
 }
 
 .check-area{
@@ -57,6 +65,7 @@ input[type="submit"]:hover {
     display:flow-root;
     grid-template-columns: 1em auto;
     gap: 0.4em;
+	color:rgba(235, 37, 37, 0.896);
 }
 
 .forgot-password{
@@ -81,7 +90,8 @@ input[type="submit"]:hover {
 
 .forgot-password-link{
 	text-decoration:underline;
-	color: rgb(0, 144, 0);
+	color:rgba(235, 37, 37, 0.896);
+	font-weight: lighter;
 }
 
 .error-area{
@@ -92,7 +102,7 @@ input[type="submit"]:hover {
 	height: auto;
 	font-family: 'Oswald', sans-serif;
 	font-weight: bold;
-	color: rgb(255, 30, 30);
+	color:rgba(235, 37, 37, 0.896);
 	text-align: center;
 	justify-content: center;
 	margin-left: 15%;
