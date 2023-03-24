@@ -48,6 +48,7 @@ Route::get('/admin', function(){
 
 // })->name('logins');
 
+
 Route::get('/register' ,[RegisterController::class, 'index'])->name('register');
 Route::post('/register' ,[RegisterController::class, 'store']);
 Route::get('/logout', [LoginController::class , 'logout'])->name('logout');

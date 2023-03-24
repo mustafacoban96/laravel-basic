@@ -16,17 +16,10 @@
                </form>
             </div>
             <div class="other-buttons">
-               
                @if (Auth::check())
-               <p class="user-name">{{$name}}</p>
-                  <form  class=other-button-form  action="" method="GET">
-                     <button class="btn">Register</button>
-                  </form>
-                  <a href="{{route('logout')}}">saas</a>
-                  <form  class=other-button-form  action="{{route('login')}}">
-                     <button class="btn">Log out</button>
-                     
-                  </form>
+                  <p class="user-name">{{$name}}</p>
+                  <a class="other-button-link" href="{{route('register')}}"><button class="btn">Register</button></a>
+                  <a class="other-button-link" href="{{route('logout')}}"><button class="btn">Log out</button></a>
                @endif 
             </div>
       </div>

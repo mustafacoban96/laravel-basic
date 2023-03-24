@@ -31,12 +31,7 @@ class LoginController extends Controller
             'email' => $request->email,
             'password' => $request->password
         ]);
-
-        // dd($v);
-        
-        
         // auth()->attempt($request->only('email','password'));
-        // dd("g");
         return redirect()->route('mainPage');
     }
 
