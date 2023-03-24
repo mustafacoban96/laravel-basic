@@ -50,6 +50,7 @@ Route::get('/admin', function(){
 
 Route::get('/register' ,[RegisterController::class, 'index'])->name('register');
 Route::post('/register' ,[RegisterController::class, 'store']);
+Route::get('/logout', [LoginController::class , 'logout'])->name('logout');
 Route::get('/login', [LoginController::class , 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 Route::get('/mainpage' , [MainPageController::class, 'index'])->name('mainPage')->middleware('auth');

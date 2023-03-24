@@ -19,17 +19,13 @@
                
                @if (Auth::check())
                <p class="user-name">{{$name}}</p>
-                  <form  class=other-button-form  action="{{route('register')}}" method="GET">
+                  <form  class=other-button-form  action="" method="GET">
                      <button class="btn">Register</button>
-                     @php
-                        Auth::logout();
-                     @endphp
                   </form>
+                  <a href="{{route('logout')}}">saas</a>
                   <form  class=other-button-form  action="{{route('login')}}">
                      <button class="btn">Log out</button>
-                     @php
-                        Auth::logout();
-                     @endphp
+                     
                   </form>
                @endif 
             </div>

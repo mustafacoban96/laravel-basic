@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -25,9 +26,30 @@ class LoginController extends Controller
         if(!Auth::validate($user)){
             return back()->with('error' , 'email or password is incorrect');
         }
+
+        $v = Auth::attempt([
+            'email' => $request->email,
+            'password' => $request->password
+        ]);
+
+        // dd($v);
         
-        auth()->attempt($request->only('email','password'));
         
+        // auth()->attempt($request->only('email','password'));
+        // dd("g");
         return redirect()->route('mainPage');
+    }
+
+
+    public function logout(){
+
+        if(Auth::user()){
+            Auth::logout();
+            Session::flush();
+        }
+
+
+        return response()->redirectToRoute('login');
+
     }
 }

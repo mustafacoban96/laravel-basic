@@ -14,12 +14,11 @@
             <span class="text-danger">{{ $errors->first('password') }}</span>
         @endif
             <div class="login-options">
-                <label class="check-area"><input type="checkbox" name="checkbox" />Remember me</label>
+                <label class="check-area"><input type="checkbox" name="remember"/>Remember me</label>
                 <label class="forgot-password" for="forgot"><a class="forgot-password-link" href="">Forgot Password</a></label>
             </div>
             <input type="submit" value="Login">
     </form>
-    
     @if(session('error'))
         <div class="error-area">
             {{session('error')}}
