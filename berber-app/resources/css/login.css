@@ -84,6 +84,20 @@ input[type="submit"]:hover {
 	color: rgb(0, 144, 0);
 }
 
+.error-area{
+	display: flex;
+	flex-direction: row;
+	text-decoration: none;
+	width: 70%;
+	height: auto;
+	font-family: 'Oswald', sans-serif;
+	font-weight: bold;
+	color: rgb(255, 30, 30);
+	text-align: center;
+	justify-content: center;
+	margin-left: 15%;
+}
+
 
 
 

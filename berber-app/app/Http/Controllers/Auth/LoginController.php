@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\MainPageController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
 {
@@ -21,8 +23,10 @@ class LoginController extends Controller
         ]);
 
         if(!Auth::validate($user)){
-            return back()->with('error' , 'email or password wrong');
+            return back()->with('error' , 'email or password is incorrect');
         }
+        
+        auth()->attempt($request->only('email','password'));
         
         return redirect()->route('mainPage');
     }

@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
-
 @section('content')
 <div class="login-box">
     <h1>Berberim</h1>
@@ -22,7 +21,9 @@
     </form>
     
     @if(session('error'))
-        {{session('error')}}
+        <div class="error-area">
+            {{session('error')}}
+        </div>
     @endif
 </div>
 @endsection

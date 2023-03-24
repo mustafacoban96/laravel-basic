@@ -10,8 +10,8 @@ class MainPageController extends Controller
     
     public function index(){
       
-       
-        return view('mainPage');
+        $username = Auth::user()->name;
+        return view('mainPage')->with('name' , $username);
     }
 
 

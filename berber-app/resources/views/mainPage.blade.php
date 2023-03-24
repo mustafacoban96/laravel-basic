@@ -16,8 +16,9 @@
                </form>
             </div>
             <div class="other-buttons">
-               <p class="user-name">Mustafa</p>
+               
                @if (Auth::check())
+               <p class="user-name">{{$name}}</p>
                   <form  class=other-button-form  action="{{route('register')}}" method="GET">
                      <button class="btn">Register</button>
                      @php
