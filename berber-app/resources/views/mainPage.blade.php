@@ -8,7 +8,7 @@
                <a href="#default" class="logo-link">
                   <img class="logo-img" src="/image/razor-65.png">
                </a>
-               <p class="logo-title">BERBERİM</p>
+               <p class="logo-title">Berberim</p>
             </div>
             <div class="reservation">
                <form class="reservation-form" action="">
