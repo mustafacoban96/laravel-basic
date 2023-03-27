@@ -49,12 +49,26 @@ Route::get('/admin', function(){
 // })->name('logins');
 
 
+
+
+
+
 Route::get('/register' ,[RegisterController::class, 'index'])->name('register');
 Route::post('/register' ,[RegisterController::class, 'store']);
 Route::get('/logout', [LoginController::class , 'logout'])->name('logout');
 Route::get('/login', [LoginController::class , 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 Route::get('/mainpage' , [MainPageController::class, 'index'])->name('mainPage')->middleware('auth');
+
+
+// admin
+Route::middleware(['isAdmin'])->group(function() {
+   Route::prefix('admin')->group(function () {
+    Route::get('/' ,[AdminController::class, 'index'])->name('aindex');
+    Route::get('/customerPage',[AdminController::class , 'customerShow'])->name('customerPage');
+   });
+});
+
 
 
 

@@ -12,6 +12,7 @@ class MainPageController extends Controller
       
         $username = Auth::user()->name;
         return view('mainPage')->with('name' , $username);
+        
     }
 
 

@@ -31,6 +31,9 @@ class LoginController extends Controller
             'email' => $request->email,
             'password' => $request->password
         ]);
+        if(Auth::user()->role == 1){
+            return redirect()->route('aindex');
+        }
         // auth()->attempt($request->only('email','password'));
         return redirect()->route('mainPage');
     }
