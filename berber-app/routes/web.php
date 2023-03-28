@@ -24,9 +24,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/admin', function(){
-    return view('posts.index');
-});
+
 
 // Route::get('/logins', function(){
 
@@ -71,6 +69,9 @@ Route::middleware(['isAdmin'])->group(function() {
 
 
 
+Route::get('/test', function(){
+    return view('vendor.pagination.custom');
+});
 
 
 

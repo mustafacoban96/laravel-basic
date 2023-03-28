@@ -28,7 +28,9 @@
       @endforeach
     </table>
 </div>
-
+<div class="paginate-button">
+    {{ $users->links('vendor.pagination.custom') }}
+</div>
 {{-- @foreach ($users as $user)
         <p style="color:aliceblue">This is user: {{ $user->name }}</p>
     @endforeach --}}
