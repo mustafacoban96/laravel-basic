@@ -99,6 +99,8 @@
     background-color: rgb(60, 60, 61);
 }
 .vertical-container2{
+    display: flex;
+    flex-direction: column;
     width: 80%;
     height: 100%;
 }

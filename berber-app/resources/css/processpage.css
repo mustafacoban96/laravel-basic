@@ -1,0 +1,75 @@
+.table-container{
+    display: flex;
+    flex-direction: row;
+    width: 98%;
+    height: 90%;
+    margin: 1%;
+    justify-content: center;
+    align-items: start;
+    
+}
+caption{
+    color: rgba(222, 9, 9, 0.927);
+    text-align: left;
+    font-weight: bolder;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+    box-shadow: 5px 3px 23px rgba(75, 72, 72, 0.5);
+  }
+
+  th,td{
+    
+    border-collapse: collapse;
+    padding: 8px;
+    
+    
+  }
+  #id-col{
+    width: 10%;
+  }
+
+  tr:nth-child(even){
+    background-color: rgba(0, 0, 0, 0.779);
+    color: red;
+  }
+  tr:nth-child(odd){
+    background-color:rgba(222, 9, 9, 0.927);
+  }
+
+  .process-button{
+    text-decoration: none;
+    border: 2px solid rgb(183, 173, 173);
+    padding: 2px;
+    border-radius: 5px;
+  }
+
+  .process-button:nth-child(even){
+    background-color: rgb(187, 13, 13);
+    color: black;
+    box-shadow: 5px 3px 23px rgba(75, 72, 72, 0.5);
+  }
+  .process-button:nth-child(odd){
+    color: red;
+    background-color: black;
+    box-shadow: 5px 3px 23px rgba(75, 72, 72, 0.5);
+  }
+
+  #process-col{
+    text-align: center;
+  }
+
+  .paginate-button{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    width: 80%;
+    height: auto;
+  }
+
+  
