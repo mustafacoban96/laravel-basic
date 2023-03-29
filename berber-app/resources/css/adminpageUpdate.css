@@ -1,0 +1,49 @@
+.update-area{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 70%;
+    
+    margin-left: 25%;
+    
+}
+.update-form {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.update{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 20%;
+    background-color: rgb(15, 20, 27);
+    box-shadow: 5px 3px 5px 5px rgba(99, 82, 82, 0.5);
+    margin: 2.5%;
+    justify-content:center;
+    align-items: center;
+    border-radius: 5px;
+
+}
+
+.update-text{
+    width: 45%;
+    height: 40%;
+    margin: 5px;
+    
+}
+
+.update-button{
+    width: 60%;
+    height: 50%;
+    border-radius: 5px;
+    color: rgba(235, 37, 37, 0.896);
+    font-weight: bold;
+    background-color: rgb(15, 20, 27);
+    box-shadow: 5px 3px 3px rgb(21, 20, 20,0.5);
+    margin-right: 25%;
+    
+}

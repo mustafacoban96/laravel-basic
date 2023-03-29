@@ -64,14 +64,14 @@ Route::middleware(['isAdmin'])->group(function() {
    Route::prefix('admin')->group(function () {
     Route::get('/' ,[AdminController::class, 'index'])->name('aindex');
     Route::get('/customerPage',[AdminController::class , 'customerShow'])->name('customerPage');
+    Route::get('/delete/{id}',[AdminController::class, 'destroy'])->name('delete');
+    Route::get('/edit/{id}' , [AdminController::class, 'edit'])->name('edit');
+    Route::put('/update/{id}', [AdminController::class, 'update'])->name('update');
    });
 });
 
 
 
-Route::get('/test', function(){
-    return view('vendor.pagination.custom');
-});
 
 
 

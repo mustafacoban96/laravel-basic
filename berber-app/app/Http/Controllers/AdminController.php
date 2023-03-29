@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 
 class AdminController extends Controller
@@ -13,22 +14,43 @@ class AdminController extends Controller
         return view('admin.adminPage');
     }
 
-
-
-
     public function customerShow(){
-
-        
-
-        
-        // $user_id = $users->where('role','=',0)[0]['id'];
-        // $user_name = $users->where('role','=',0)[0]['name'];
-        // $user_email = $users->where('role','=',0)[0]['email'];
-
-        $user_array = User::where('role','=',0)->paginate(14);
-        
-       
+        $user_array = User::where('role','=',0)->paginate(15);
         return view('admin.customterProcess')->with('users',$user_array);
+    }
+
+
+    public function edit($id){
+        //dd(User::find($id));
+        $user_info = User::where('id',$id)->first();
+        return view('admin.updatePage')->with('user',$user_info);
+    }
+
+    public function update(Request $request,$id){
+        $user = User::find($id);
+        
+        $validated = $request->validate([
+            'name' => 'sometimes|string|max:255',
+            'email' => 'sometimes|string|email|max:255|unique:users,email,'.$user->id,
+            'password' =>'sometimes|confirmed'
+        ]);
+
+        if(empty($validated['password'])){
+            $validated['password'] = $user->password;
+        }
+        else{
+            $validated['password'] = Hash::make($request->password);
+        }
+
+        $user->update($validated);
+        $user->save();
+
+        return back()->with('success' , 'Record was updated succesfully');
+    }
+
+    public function destroy($id){
+        User::destroy($id);
+        return back()->with('success' , 'Record was deleted successfully');
     }
 
 }
