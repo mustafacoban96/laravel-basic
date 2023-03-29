@@ -23,14 +23,16 @@ class RegisterController extends Controller
         $this->validate($request ,[
             'name' => ['required' , 'string', 'max:255'],
             'email' => ['required' , 'string', 'email', 'max:255','unique:users,email' ],
-            'password' => ['required', 'confirmed']
+            'password' => ['required', 'confirmed'],
+            'phone' => ['required','string','max:255'] // edit this field
         ]);
 
         //store user
         User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password)
+            'password' => Hash::make($request->password),
+            'phone' => $request->phone
         ]);
 
         // sign the user in

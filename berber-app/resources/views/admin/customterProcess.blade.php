@@ -22,7 +22,7 @@
                 {{$user->name}}
             </td>
             <td>{{$user->email}}</td>
-            <td>1231231231</td>
+            <td>{{$user->phone}}</td>
             <td id="process-col">
                 <a class="process-button" href="edit/{{$user->id}}">edit</a>
                 <a class="process-button" href="delete/{{$user->id}}">delete</a>
