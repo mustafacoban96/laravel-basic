@@ -32,7 +32,8 @@ class RegisterController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'phone' => $request->phone
+            'phone' => $request->phone,
+            'role' => 0
         ]);
 
         // sign the user in

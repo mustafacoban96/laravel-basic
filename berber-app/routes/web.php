@@ -68,7 +68,8 @@ Route::middleware(['isAdmin'])->group(function() {
     Route::get('/edit/{id}' , [AdminController::class, 'edit'])->name('edit');
     Route::put('/update/{id}', [AdminController::class, 'update'])->name('update');
     Route::get('/employeePage' , [AdminController::class, 'employeeShow'])->name('employeePage');
-    Route::get('/employeeAdd', [AdminController::class , 'createEmployee'])->name('employeeAddPage');
+    Route::get('/employeeCreate', [AdminController::class , 'createEmployee'])->name('employeeCreatePage');
+    Route::post('/employeeAdd' , [AdminController::class , 'addEmployee'])->name('addEmploye');
    });
 });
 

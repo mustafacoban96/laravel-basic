@@ -31,7 +31,7 @@
     </table>
 </div>
 <div class="add-employee">
-    <a class="process-button" id="add" href="">add</a>
+    <a class="process-button" id="add" href="{{route('employeeCreatePage')}}">add</a>
 </div>
 @if(session('success'))
     <div class="success-area">

@@ -21,20 +21,37 @@ class AdminController extends Controller
 
 
     public function employeeShow(){
-        $employee = User::where('role',1)->paginate(15);
+        $employee = User::where('role',2)->paginate(15);
         return view('admin.employeeProcess')->with('users',$employee);
     }
 
     public function createEmployee(){
         
+        return view('admin.addEmployee');
+        
     }
+    
+    public function addEmployee(Request $request){
+        //validation
+        $this->validate($request ,[
+            'name' => ['required' , 'string', 'max:255'],
+            'email' => ['required' , 'string', 'email', 'max:255','unique:users,email' ],
+            'password' => ['required', 'confirmed'],
+            'phone' => ['required','string','max:255'], // edit this field
+            
+        ]);
 
+        //store user
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'phone' => $request->phone,
+            'role' => 2
+        ]);
 
-
-
-
-
-
+        return back()->with('success' , 'Employee was added successfully.');
+    }
 
     public function edit($id){
         //dd(User::find($id));
