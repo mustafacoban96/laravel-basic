@@ -15,9 +15,25 @@ class AdminController extends Controller
     }
 
     public function customerShow(){
-        $user_array = User::where('role','=',0)->paginate(15);
+        $user_array = User::where('role',0)->paginate(15);
         return view('admin.customterProcess')->with('users',$user_array);
     }
+
+
+    public function employeeShow(){
+        $employee = User::where('role',1)->paginate(15);
+        return view('admin.employeeProcess')->with('users',$employee);
+    }
+
+    public function createEmployee(){
+        
+    }
+
+
+
+
+
+
 
 
     public function edit($id){
@@ -32,7 +48,8 @@ class AdminController extends Controller
         $validated = $request->validate([
             'name' => 'sometimes|string|max:255',
             'email' => 'sometimes|string|email|max:255|unique:users,email,'.$user->id,
-            'password' =>'sometimes|confirmed'
+            'password' =>'sometimes|confirmed',
+            'phone' => 'sometimes|string'
         ]);
 
         if(empty($validated['password'])){

@@ -67,6 +67,8 @@ Route::middleware(['isAdmin'])->group(function() {
     Route::get('/delete/{id}',[AdminController::class, 'destroy'])->name('delete');
     Route::get('/edit/{id}' , [AdminController::class, 'edit'])->name('edit');
     Route::put('/update/{id}', [AdminController::class, 'update'])->name('update');
+    Route::get('/employeePage' , [AdminController::class, 'employeeShow'])->name('employeePage');
+    Route::get('/employeeAdd', [AdminController::class , 'createEmployee'])->name('employeeAddPage');
    });
 });
 

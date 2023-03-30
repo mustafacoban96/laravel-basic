@@ -13,8 +13,12 @@
                 <input class="update-text" type="text" name ="name" placeholder="name" value="{{$user->name}}">
             </div>
             <div class="update">
-                <label style="color: aliceblue; font-weight:bold" for="name">Email :</label>
+                <label style="color: aliceblue; font-weight:bold" for="email">Email :</label>
                 <input class="update-text" type="text" name="email" placeholder="email" value="{{$user->email}}">
+            </div>
+            <div class="update">
+                <label style="color: aliceblue; font-weight:bold" for="phone">Phone :</label>
+                <input class="update-text" type="text" name="phone" placeholder="phone" value="{{$user->phone}}">
             </div>
             <div class="update">
                 <input class="update-text" type="password" name="password" placeholder="new password">
