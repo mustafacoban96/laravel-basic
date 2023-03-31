@@ -218,6 +218,19 @@
     color: white;
   }
 
+/* employee Page Cards */
+
+.employee-cards-area{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    height: auto;
+    margin: 2% 2%;
+    padding: 2%;
+    justify-content: space-around;
+}
+
+
 
   
 

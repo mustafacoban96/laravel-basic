@@ -11,7 +11,8 @@
                <p class="logo-title">Berberim</p>
             </div>
             <div class="reservation">
-               <form class="reservation-form" action="">
+               {{-- !!!!!!!!!!!!!!!!!! --}}
+               <form class="reservation-form" action="{{route('employeeMainPage')}}">
                   <button type="submit" class="btn-reserve">Randevu Al</button>
                </form>
             </div>

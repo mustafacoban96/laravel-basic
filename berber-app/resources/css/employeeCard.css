@@ -1,0 +1,48 @@
+.employee-info{
+    margin: 0.5%;
+    width: 20%;
+    height: 50%;
+    box-shadow: 0 0 10px rgba(240, 227, 227, 0.3);
+    
+}
+.employee-pic{
+    object-fit:scale-down;
+    width: 100%;
+    height: 80%;
+    margin-bottom: -12%;
+    
+}
+.name{
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-bottom: 2px;
+    margin-left: 5px;
+}
+.phone-number{
+   font-weight: lighter;
+   margin-left: 5px;
+   margin-top: 3px;
+   color: rgb(115, 117, 117);
+   margin-bottom: 2px;
+}
+.appointment-button{
+    margin-bottom: 4px;
+    background-color:rgba(235, 37, 37, 0.896);
+    color: white;
+    border-color:azure;
+    width: 100px;
+    height: 30px;
+    border-radius: 8px;
+    font-family:Arial, Helvetica, sans-serif;
+    margin-left: 2px;
+    
+}
+
+.appointment-button:hover{
+    background-color: white;
+    color: rgba(235, 37, 37, 0.896);
+}
+.appointment-button:active{
+    background-color: rgb(209, 209, 209);
+}
+
