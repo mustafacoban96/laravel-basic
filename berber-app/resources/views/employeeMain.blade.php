@@ -28,10 +28,35 @@
             <img src="/image/indir.jpg" class="employee-pic">
             <p class="name">{{$employee->name}}</p>
             <p class="phone-number">{{$employee->phone}}</p>
-            <a href=""><button class="appointment-button">Randevu al</button></a>
-        </div> 
+            <button class="appointment-button">Randevu al</button>
+            
+        </div>
         @endforeach
+        
+        <div id="simpleModal" class="modal">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <span class="closeBtn">&times;</span>
+                 <h2>Modal Header</h2>
+             </div>
+             <div class="modal-body">
+                 <form action="">
+                    @foreach ($serveTypes as $serveType)
+                    <li class="serve-type">
+                        <label for="sac-kesimi">{{$serveType->name}}</label>
+                        <input type="checkbox" name="{{$serveType->name}}">
+                    </li>
+                    @endforeach
+                     <button class="appointment-button">Randevu al</button>
+                 </form>
+             </div>
+             <div class="modal-footer">
+                 <h3>Modal Footer</h3>
+             </div>
+         </div>
+     </div>
     </div>
+    
  <div class="footer">
     <div class="iletişim">
        <h3>İLETİŞİM</h3>

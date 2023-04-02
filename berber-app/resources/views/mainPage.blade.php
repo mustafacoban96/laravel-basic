@@ -16,6 +16,7 @@
                   <button type="submit" class="btn-reserve">Randevu Al</button>
                </form>
             </div>
+            
             <div class="other-buttons">
                @if (Auth::check())
                   <p class="user-name">{{$name}}</p>
