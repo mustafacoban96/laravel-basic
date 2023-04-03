@@ -22,41 +22,42 @@
           </div>
     </div>
  </div>
+ <form action="{{route('serveEmployee')}}" method="POST">
     <div class="employee-cards-area">
         @foreach ($employees as $employee)
-        <div class="employee-info">
-            <img src="/image/indir.jpg" class="employee-pic">
-            <p class="name">{{$employee->name}}</p>
-            <p class="phone-number">{{$employee->phone}}</p>
-            <button class="appointment-button">Randevu al</button>
-            
-        </div>
+         <div class="employee-info">
+               <img src="/image/indir.jpg" class="employee-pic">
+               <p class="name">{{$employee->name}}</p>
+               <p class="phone-number">{{$employee->phone}}</p>
+               <input id="label{{ $loop->iteration }}" type="radio" name="employee" value="{{$employee->id}}">
+               <button data-emp="label{{ $loop->iteration }}" type="button" class="appointment-button">Randevu al</button>
+         </div>
         @endforeach
-        
         <div id="simpleModal" class="modal">
          <div class="modal-content">
              <div class="modal-header">
                  <span class="closeBtn">&times;</span>
-                 <h2>Modal Header</h2>
+                 <h2>Hizmet Tipleri</h2>
              </div>
              <div class="modal-body">
-                 <form action="">
+                  @csrf
                     @foreach ($serveTypes as $serveType)
                     <li class="serve-type">
-                        <label for="sac-kesimi">{{$serveType->name}}</label>
-                        <input type="checkbox" name="{{$serveType->name}}">
+                        <label for="{{$serveType->name}}">{{$serveType->name}}</label>
+                        <input type="checkbox" name="serves[]" value="{{$serveType->name}}">
                     </li>
                     @endforeach
-                     <button class="appointment-button">Randevu al</button>
-                 </form>
+                     <button type="submit" id="modal-button" class="appointment-button">Onayla</button>
+                 
              </div>
              <div class="modal-footer">
-                 <h3>Modal Footer</h3>
+                 <h3>Hizmet Tipi Seçiniz...</h3>
              </div>
          </div>
      </div>
     </div>
-    
+   </form>
+   
  <div class="footer">
     <div class="iletişim">
        <h3>İLETİŞİM</h3>

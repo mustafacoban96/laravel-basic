@@ -47,17 +47,6 @@
 }
 
 /* modal */
-.modal-button{
-    background-color: coral;
-    padding:1em 2em;
-    border: none;
-    color: aliceblue;
-}
-
-.modal-button:hover{
-    background-color: blueviolet;
-}
-
 .modal{
     display: none;
     position: fixed;
@@ -85,7 +74,7 @@
 
 .modal-header{
     padding:15px;
-    background-color: coral;
+    background-color:rgba(235, 37, 37, 0.896);
     color: #fff;
 }
 .modal-body{
@@ -103,7 +92,7 @@
     font-size: 1.5em;
 }
 .modal-footer{
-    background-color: coral;
+    background-color:rgba(235, 37, 37, 0.896);
     padding: 10px;
     color: #fff;
     text-align: center;
@@ -126,3 +115,9 @@
     to{opacity:1}
 }
 
+/* modal-Button*/
+
+#modal-button{
+    margin-left: 72%;
+    margin-top: 2%;
+}

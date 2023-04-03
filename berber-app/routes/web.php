@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 use App\models\Customer;
+use Illuminate\Support\Facades\App;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,7 +51,7 @@ Route::get('/', function () {
 
 
 
-
+//
 Route::get('/register' ,[RegisterController::class, 'index'])->name('register');
 Route::post('/register' ,[RegisterController::class, 'store']);
 Route::get('/logout', [LoginController::class , 'logout'])->name('logout');
@@ -58,6 +59,12 @@ Route::get('/login', [LoginController::class , 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 Route::get('/mainpage' , [MainPageController::class, 'index'])->name('mainPage')->middleware('auth');
 Route::get('/employeeMain' , [MainPageController::class , 'fromMainToEmployeePage'])->name('employeeMainPage');
+
+//Bridge point below
+
+//fromMaintoAppointment
+Route::post('/employee' , [AppointmentController::class , 'serveAndEmployeeStore'])->name('serveEmployee');
+Route::get('/employee/{id}', [AppointmentController::class , 'appointmentTable'])->name('employeeAppointmentTable');
 
 // admin
 Route::middleware(['isAdmin'])->group(function() {
