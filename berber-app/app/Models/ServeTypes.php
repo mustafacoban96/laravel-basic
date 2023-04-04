@@ -14,4 +14,6 @@ class ServeTypes extends Model
     protected $fillable = [
         'name',
     ];
+
+
 }

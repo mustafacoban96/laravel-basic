@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Carbon\Carbon;
+use Carbon\CarbonInterval;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class AppointmentController extends Controller
 {
@@ -20,6 +23,12 @@ class AppointmentController extends Controller
 
     public function appointmentTable($id){
         $employee = User::where('id',$id)->first();
+
+        $employees = User::where('role' , 2)->lists('id');
+        dd($employees);
+        
+        //dd(count($employees)) number of employees;
+        dd($employee->id);
         
         return view('employeeAppointment')->with('employee' , $employee);
     }
