@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Worktime;
 use Carbon\Carbon;
 use Carbon\CarbonInterval;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -17,27 +18,15 @@ class AppointmentSeeder extends Seeder
     public function run(): void
     {
         $employees = User::where('role',2)->get();
-        
-
+        $workTimes = Worktime::all();
         for($i = 0 ; $i<count($employees); $i++){
-            $start = Carbon::createFromTime(8, 0); // set start time to 8:00 AM
-            $end = Carbon::createFromTime(21, 0); // set end time to 9:00 PM
-            $interval = CarbonInterval::make('1hour');
-            while ($start < $end) {
+            for($j = 0; $j<count($workTimes);$j++){
                 $data = [
                     'employee_id' => $employees[$i]->id,                           
-                    'start_time' => $start->format('H:i'),
-                    'end_time' => $start->add($interval)->format('H:i')
+                    'worktime_id' => $workTimes[$j]->id,
                     
                 ];
-
-                if($data['start_time'] == '12:00'){
-                    continue;
-                }
-                else{
-                    DB::table('appointments')->insert($data);
-                }
-                
+                DB::table('appointments')->insert($data);
             }
         }
     }

@@ -31,7 +31,9 @@ class AdminController extends Controller
         
     }
     
-    public function addEmployee(Request $request){
+    public function addEmployee(Request $request,User $user){
+
+
         //validation
         $this->validate($request ,[
             'name' => ['required' , 'string', 'max:255'],
@@ -49,6 +51,12 @@ class AdminController extends Controller
             'phone' => $request->phone,
             'role' => 2
         ]);
+
+        $newEmployeeID = User::where('role' , 2)->latest('id')->first()->id;
+        $user->addWorkTimeToNewEmployee($newEmployeeID);
+        
+        
+        
 
         return back()->with('success' , 'Employee was added successfully.');
     }

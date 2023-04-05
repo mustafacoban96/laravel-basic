@@ -10,9 +10,7 @@ console.log(modalBtn)
 for(let i = 0; i < modalBtn.length; i++){
     modalBtn[i].addEventListener("click",function() {
         let selected = this.dataset.emp
-
         document.querySelector(`#${selected}`).checked = true
-
         modal.style.display = 'block';
     });
 }

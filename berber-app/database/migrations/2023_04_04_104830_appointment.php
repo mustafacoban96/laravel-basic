@@ -18,9 +18,10 @@ return new class extends Migration
             $table->increments('id');
             $table->unsignedBigInteger('employee_id');
             $table->foreign('employee_id')->references('id')->on('users')->where('role',2)->onDelete('cascade');
-            $table->time('start_time');
-            $table->time('end_time');
+            $table->integer('worktime_id')->unsigned();
+            $table->foreign('worktime_id')->references('id')->on('worktimes')->onDelete('cascade');
             $table->timestamps();
+            
        });
 
     }

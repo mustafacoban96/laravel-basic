@@ -15,7 +15,7 @@
           </div>
           <div class="other-buttons">
              @if (Auth::check())
-                <p class="user-name">{{$username}}</p>
+                <p class="user-name">{{$name}}</p>
                 <a class="other-button-link" href="{{route('register')}}"><button class="btn">Register</button></a>
                 <a class="other-button-link" href="{{route('logout')}}"><button class="btn">Log out</button></a>
              @endif 

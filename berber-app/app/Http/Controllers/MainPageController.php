@@ -18,11 +18,11 @@ class MainPageController extends Controller
     }
 
     public function fromMainToEmployeePage(){
-        $username = Auth::user()->name;
+        $name = Auth::user()->name;
         $employees = User::where('role',2)->get();
         $serveTypes = ServeTypes::all();
         
-        return view('employeeMain' ,compact(['username','serveTypes']))->with('employees',$employees);
+        return view('employeeMain' ,compact(['name','serveTypes']))->with('employees',$employees);
     }
 
 

@@ -14,8 +14,7 @@ class Appointment extends Model
 
     protected $fillable =[
         'employee_id',
-        'start_time',
-        'end_time'
+        'worktime_id'
     ];
 
 
@@ -24,5 +23,10 @@ class Appointment extends Model
     public function AssignEmployeeToAppointmentTable()
     {
         return $this->belongsTo(User::class)->where('role', 2);
+    }
+
+
+    public function AssignWorkTimeToAppoinmentTable(){
+        return $this->belongsTo(Worktime::class);
     }
 }
