@@ -54,6 +54,12 @@ class User extends Authenticatable
         return $this->hasMany(Appointment::class);
     }
 
+    public function customerToAppointmentStatus(){
+        return $this->hasMany(AppointmentStatus::class);
+    }
+
+
+    
 
 
 
@@ -84,7 +90,6 @@ class User extends Authenticatable
                 $data = [
                     'employee_id' => $id,                           
                     'worktime_id' => $workTimes[$j]->id,
-                    
                 ];
                 DB::table('appointments')->insert($data);
             }

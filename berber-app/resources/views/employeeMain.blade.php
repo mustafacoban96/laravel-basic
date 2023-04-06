@@ -29,35 +29,12 @@
                <img src="/image/indir.jpg" class="employee-pic">
                <p class="name">{{$employee->name}}</p>
                <p class="phone-number">{{$employee->phone}}</p>
+               @csrf
                <input id="label{{ $loop->iteration }}" type="radio" name="employee" value="{{$employee->id}}">
-               <button data-emp="label{{ $loop->iteration }}" type="button" class="appointment-button">Randevu al</button>
+               <button data-emp="label{{ $loop->iteration }}" type="submit" class="appointment-button">Randevu al</button>
          </div>
         @endforeach
-        <div id="simpleModal" class="modal">
-         <div class="modal-content">
-             <div class="modal-header">
-                 <span class="closeBtn">&times;</span>
-                 <h2>Hizmet Tipleri</h2>
-             </div>
-             <div class="modal-body">
-                  @csrf
-                    @foreach ($serveTypes as $serveType)
-                    <li class="serve-type">
-                        <label for="{{$serveType->name}}">{{$serveType->name}}</label>
-                        <input type="checkbox" name="serves[]" value="{{$serveType->name}}">
-                    </li>
-                    @endforeach
-                     <button type="submit" id="modal-button" class="appointment-button">Onayla</button>
-                 
-             </div>
-             <div class="modal-footer">
-                 <h3>Hizmet Tipi Seçiniz...</h3>
-             </div>
-         </div>
-     </div>
-    </div>
    </form>
-   
  <div class="footer">
     <div class="iletişim">
        <h3>İLETİŞİM</h3>

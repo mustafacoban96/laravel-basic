@@ -25,8 +25,12 @@ class Appointment extends Model
         return $this->belongsTo(User::class)->where('role', 2);
     }
 
-
+    
     public function AssignWorkTimeToAppoinmentTable(){
         return $this->belongsTo(Worktime::class);
+    }
+
+    public function appointmentStatus(){
+        return $this->hasMany(AppointmentStatus::class);
     }
 }

@@ -3,6 +3,9 @@
 
 
 @section('content')
+@php
+      use App\Models\AppointmentStatus;
+@endphp
 <div class="navbar-outer">
     <div class="navbar-inner">
           <div class="logo">
@@ -23,12 +26,16 @@
           </div>
     </div>
  </div>
- <h2 style="color: aliceblue;text-align:center">{{$employee->name}} Randevu Tablosu</h2>
- 
+ <h2 style="color: aliceblue;text-align:center">Berber {{$employee->name}} Randevu Tablosu</h2>
+   @if($errors->any())
+               @foreach ($errors->all() as $error)
+                  <h3 style="color: aliceblue; text-align:center">{{ $error }}</h3>
+               @endforeach
+   @endif
 
+   
  <div class="emp-appoinment-table">
     <table>
-        
         <tr>
             <th>Start time</th>
             <th>End time</th>
@@ -38,30 +45,47 @@
            <tr>
             <td>{{$worktime[$i]->start_time}}</td>
             <td>{{$worktime[$i]->end_time}}</td>
-            <form action="">
-               <td style="text-align: center"><input type="radio" name="appointmentID" value="{{$appointments[$i]->id}}"></td>
+            <form action="{{route('madeAppointment')}}" method="POST">
+               @if (($current_time->diffInMinutes($worktime[$i]->start_time)) >= 45 && !($current_time->lt($worktime[$i]->start_time)))
+                  <td style="text-align: center">Zaman Aşımı</td>
+               @else
+                  @if (AppointmentStatus::where('appointment_id',$appointments[$i]->id)->where('customer_id',Auth::user()->id)->exists())
+                     <td style="text-align: center">IPTAL</td>
+                  @elseif (AppointmentStatus::where('appointment_id',$appointments[$i]->id)->whereNot('customer_id',Auth::user()->id)->exists())
+                     <td style="text-align: center">ALINDI</td>
+                  @else
+                     <td style="text-align: center"><input id="label{{$i}}" type="radio" name="appointmentID" value="{{$appointments[$i]->id}}">
+                        <button data-emp="label{{$i}}" type="button" class="appointment-button">Seç</button>
+                     </td>
+                  @endif
+               @endif
            </tr>
         @endfor
     </table>
+        <div id="simpleModal" class="modal">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <span class="closeBtn">&times;</span>
+                 <h2>Hizmet Tipleri</h2>
+             </div>
+             <div class="modal-body">
+                  @csrf
+                    @foreach ($serveTypes as $serveType)
+                    <li class="serve-type">
+                        <label for="{{$serveType->name}}">{{$serveType->name}}</label>
+                        <input type="checkbox" name="serves[]" value="{{$serveType->name}}">
+                    </li>
+                    @endforeach
+                     <button type="submit" id="modal-button" class="appointment-button">Onayla</button>
+             </div>
+             <div class="modal-footer">
+                 <h3>Hizmet Tipi Seçiniz...</h3>
+             </div>
+         </div>
+     </div>
+    </div>
    </form>
  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  <div class="footer">
     <div class="iletişim">
        <h3>İLETİŞİM</h3>

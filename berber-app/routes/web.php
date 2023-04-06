@@ -47,10 +47,6 @@ Route::get('/', function () {
 
 // })->name('logins');
 
-
-
-
-
 //
 Route::get('/register' ,[RegisterController::class, 'index'])->name('register');
 Route::post('/register' ,[RegisterController::class, 'store']);
@@ -65,6 +61,8 @@ Route::get('/employeeMain' , [MainPageController::class , 'fromMainToEmployeePag
 //fromMaintoAppointment
 Route::post('/employee' , [AppointmentController::class , 'serveAndEmployeeStore'])->name('serveEmployee');
 Route::get('/employee/{id}', [AppointmentController::class , 'appointmentTable'])->name('employeeAppointmentTable');
+Route::post('/appointment', [AppointmentController::class, 'madeAppointment'])->name('madeAppointment');
+
 
 // admin
 Route::middleware(['isAdmin'])->group(function() {
