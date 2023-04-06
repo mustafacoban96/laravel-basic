@@ -73,9 +73,7 @@ class AppointmentController extends Controller
         
        
         //dd(User::find($customerID));
-        
         // $current_hour = Carbon::now();
-        
         // $start_time = Carbon::parse('15:09:05');
         
 
@@ -85,11 +83,7 @@ class AppointmentController extends Controller
         
         $serves = $request->input('serves');
         // dd($serves);
-
-
-
-       
-        
+ 
         // if return null from modal
         if(empty($serves)){
             return redirect()->back()->withErrors(['error' => 'Işleminiz tamamlanmadı lutfen hizmet tipi seçiniz']);
@@ -100,20 +94,12 @@ class AppointmentController extends Controller
             return redirect()->back()->withErrors(['error' => 'Size ait randevu mevcuttur.Lutfen guncelleme yapınız.']);
         }
         
-        
-        
-        
-
-        
         AppointmentStatus::create([
             'appointment_id' => (int)$request->input('appointmentID'),
             'customer_id' => Auth::user()->id,
             'status' => 1
         ]);
-
-        
-
-        return redirect()->back()->with('success','İşleminiz başarıyla tammamlanmıştır.');
+        return redirect()->back()->with('success','İşleminiz başarıyla tamamlanmıştır.');
     }
 
     

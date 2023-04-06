@@ -32,7 +32,11 @@
                   <h3 style="color: aliceblue; text-align:center">{{ $error }}</h3>
                @endforeach
    @endif
-
+   @if(session('success'))
+      <div class="success-area">
+         {{session('success')}}
+      </div>
+   @endif
    
  <div class="emp-appoinment-table">
     <table>
@@ -50,7 +54,7 @@
                   <td style="text-align: center">Zaman Aşımı</td>
                @else
                   @if (AppointmentStatus::where('appointment_id',$appointments[$i]->id)->where('customer_id',Auth::user()->id)->exists())
-                     <td style="text-align: center">IPTAL</td>
+                     <td style="text-align: center">IPTAL ET</td>
                   @elseif (AppointmentStatus::where('appointment_id',$appointments[$i]->id)->whereNot('customer_id',Auth::user()->id)->exists())
                      <td style="text-align: center">ALINDI</td>
                   @else
