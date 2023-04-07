@@ -9,7 +9,7 @@
 <div class="navbar-outer">
     <div class="navbar-inner">
           <div class="logo">
-             <a href="#default" class="logo-link">
+             <a href="{{route('mainPage')}}" class="logo-link">
                 <img class="logo-img" src="/image/razor-65.png">
              </a>
              <p class="logo-title">Berberim</p>
@@ -54,11 +54,12 @@
                   <td style="text-align: center">Zaman Aşımı</td>
                @else
                   @if (AppointmentStatus::where('appointment_id',$appointments[$i]->id)->where('customer_id',Auth::user()->id)->exists())
-                     <td style="text-align: center">IPTAL ET</td>
+                        <td style="text-align: center">ALDINIZ</td>
                   @elseif (AppointmentStatus::where('appointment_id',$appointments[$i]->id)->whereNot('customer_id',Auth::user()->id)->exists())
                      <td style="text-align: center">ALINDI</td>
                   @else
-                     <td style="text-align: center"><input id="label{{$i}}" type="radio" name="appointmentID" value="{{$appointments[$i]->id}}">
+                     <td style="text-align: center">
+                        <input id="label{{$i}}" type="radio" name="appointmentID" value="{{$appointments[$i]->id}}">
                         <button data-emp="label{{$i}}" type="button" class="appointment-button">Seç</button>
                      </td>
                   @endif
@@ -89,6 +90,20 @@
      </div>
     </div>
    </form>
+   @if (AppointmentStatus::where('customer_id',Auth::user()->id)->exists())
+   <div class="appointment-cancel">
+      <form action="{{route('destroyAppointment')}}" method="POST">
+         @csrf
+         <button class="cancel" type="submit">Randevu İptali için tıklayınız</button>
+      </form>
+   </div>
+   @endif
+
+   @if(session('cancel'))
+   <div class="success-area">
+      {{session('cancel')}}
+   </div>
+@endif
  </div>
  <div class="footer">
     <div class="iletişim">

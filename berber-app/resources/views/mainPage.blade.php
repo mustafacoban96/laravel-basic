@@ -2,10 +2,13 @@
 
 
 @section('content')
+@php
+      use App\Models\AppointmentStatus;
+@endphp
    <div class="navbar-outer">
       <div class="navbar-inner">
             <div class="logo">
-               <a href="#default" class="logo-link">
+               <a href="{{route('mainPage')}}" class="logo-link">
                   <img class="logo-img" src="/image/razor-65.png">
                </a>
                <p class="logo-title">Berberim</p>
@@ -26,6 +29,20 @@
             </div>
       </div>
    </div>
+   @if (AppointmentStatus::where('customer_id',Auth::user()->id)->exists())
+   <div class="appointment-cancel">
+      <form action="{{route('destroyAppointment')}}" method="POST">
+         @csrf
+         <button class="cancel" type="submit">Randevu İptali için tıklayınız</button>
+      </form>
+   </div>
+   @endif
+
+   @if(session('cancel'))
+   <div class="success-area">
+      {{session('cancel')}}
+   </div>
+@endif
    <div class="main-content">
       <img src="/image/barber.png" alt="">
    </div>

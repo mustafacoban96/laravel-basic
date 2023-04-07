@@ -102,6 +102,13 @@ class AppointmentController extends Controller
         return redirect()->back()->with('success','İşleminiz başarıyla tamamlanmıştır.');
     }
 
+
+    public function appointmentDestroy(){
+       AppointmentStatus::where('customer_id',Auth::user()->id)->delete();
+       return redirect()->back()->with('cancel','Randevunuz iptal edilmiştir.');
+
+    }
+
     
     
 }

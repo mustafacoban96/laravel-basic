@@ -5,7 +5,7 @@
     height: auto;
     background-color: blueviolet;
     margin-left: 35%;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
 }
 
 /* modal */
@@ -82,6 +82,36 @@
 #modal-button{
     margin-left: 72%;
     margin-top: 2%;
+}
+
+/*Appointment cancel button*/
+
+.appointment-cancel{
+    display: flex;
+    width: 15%;
+    height: 10%;
+    margin-left: 43%;
+    justify-content: center;
+}
+
+.cancel{
+    width:auto;
+    height: 100%;
+    border: solid 2px rgba(112, 93, 93, 0.896);
+    border-radius: 10px;
+    background-color: rgba(235, 37, 37, 0.896);
+    color: aliceblue;
+    box-shadow: 2px 3px  rgba(42, 40, 40, 0.799);
+}
+
+.cancel:hover{
+    background-color: aliceblue;
+    color: #000;
+    border: aliceblue;
+}
+
+.cancel:active{
+    background-color: rgb(176, 181, 186);
 }
 
 

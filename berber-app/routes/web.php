@@ -62,6 +62,7 @@ Route::get('/employeeMain' , [MainPageController::class , 'fromMainToEmployeePag
 Route::post('/employee' , [AppointmentController::class , 'serveAndEmployeeStore'])->name('serveEmployee');
 Route::get('/employee/{id}', [AppointmentController::class , 'appointmentTable'])->name('employeeAppointmentTable');
 Route::post('/appointment', [AppointmentController::class, 'madeAppointment'])->name('madeAppointment');
+Route::post('/cancelAppointment',[AppointmentController::class , 'appointmentDestroy'])->name('destroyAppointment');
 
 
 // admin
@@ -75,6 +76,7 @@ Route::middleware(['isAdmin'])->group(function() {
     Route::get('/employeePage' , [AdminController::class, 'employeeShow'])->name('employeePage');
     Route::get('/employeeCreate', [AdminController::class , 'createEmployee'])->name('employeeCreatePage');
     Route::post('/employeeAdd' , [AdminController::class , 'addEmployee'])->name('addEmploye');
+    Route::get('/dailyPlan', [AdminController::class, 'showDailyPlan'])->name('daily');
    });
 });
 

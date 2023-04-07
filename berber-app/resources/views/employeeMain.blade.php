@@ -5,7 +5,7 @@
 <div class="navbar-outer">
     <div class="navbar-inner">
           <div class="logo">
-             <a href="#default" class="logo-link">
+             <a href="{{route('mainPage')}}" class="logo-link">
                 <img class="logo-img" src="/image/razor-65.png">
              </a>
              <p class="logo-title">Berberim</p>

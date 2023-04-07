@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
 use App\Models\User;
+use App\Models\Worktime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -23,6 +26,23 @@ class AdminController extends Controller
     public function employeeShow(){
         $employee = User::where('role',2)->paginate(15);
         return view('admin.employeeProcess')->with('users',$employee);
+    }
+
+    public function showDailyPlan(){
+        $appointments = Appointment::all();
+        $v = DB::table('appointments')->distinct('employee_id')->get();
+        //dd($v);
+        // foreach($appointments as $appointment){
+        //     dd($appointment->id);
+        // }
+        
+        $employees = User::where('role',2)->get();
+        //dd(($employees[7]->name));
+        $worktime = Worktime::all();
+        //dd($worktime[0]->start_time);
+        return view('admin.dailyPlan')->with('employees',$employees)
+                                        ->with('worktimes',$worktime)
+                                        ->with('appointments',$appointments);
     }
 
     public function createEmployee(){
