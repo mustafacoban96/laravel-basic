@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('appointment_id')->unsigned();
             $table->foreign('appointment_id')->references('id')->on('appointments')->onDelete('cascade');
             $table->unsignedBigInteger('customer_id');
-            $table->foreign('customer_id')->references('id')->on('users')->where('role',0)->onDelete('cascade');
+            $table->foreign('customer_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('status'); // if it is greater than 0 , appointment was made.
             $table->timestamps();
 

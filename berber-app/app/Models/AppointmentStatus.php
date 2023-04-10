@@ -25,7 +25,7 @@ class AppointmentStatus extends Model
         return $this->belongsTo(Appointment::class);
     }
     public function customerID(){
-        return $this->belongsTo(User::class)->where('role', 0);
+        return $this->belongsTo(User::class);
     }
 
 

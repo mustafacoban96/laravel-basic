@@ -35,7 +35,7 @@ table {
   }
 
   tr:nth-child(even){
-    background-color: rgba(0, 0, 0, 0.779);
+    background-color: rgba(0, 0, 0, 0.915);
     color: red;
   }
   tr:nth-child(odd){

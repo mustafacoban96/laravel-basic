@@ -6,7 +6,7 @@
 @section('admin')
 <div class="table-container">
     <table>
-        <caption>Customer Information</caption>
+        <caption>Employee Information</caption>
         <tr>
             <th id="id-col">Id</th>
             <th>Name</th>

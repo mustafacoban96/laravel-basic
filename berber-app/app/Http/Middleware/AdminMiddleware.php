@@ -18,10 +18,10 @@ class AdminMiddleware
     {
         //admin role == 1
         //user role == 0
+        //employee role == 2
         if(Auth::check() && Auth::user()->role == 1){
             return $next($request);
         }
         return abort(403, 'You are not admin');
-       
     }
 }

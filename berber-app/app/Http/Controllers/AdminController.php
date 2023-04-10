@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appointment;
+use App\Models\AppointmentStatus;
 use App\Models\User;
 use App\Models\Worktime;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -30,25 +33,32 @@ class AdminController extends Controller
 
     public function showDailyPlan(){
         $appointments = Appointment::all();
-        $v = DB::table('appointments')->distinct('employee_id')->get();
-        //dd($v);
-        // foreach($appointments as $appointment){
-        //     dd($appointment->id);
-        // }
-        
-        $employees = User::where('role',2)->get();
-        //dd(($employees[7]->name));
+        $employees = User::where('role',2)->get(); 
         $worktime = Worktime::all();
-        //dd($worktime[0]->start_time);
+
+        $current_time = Carbon::now();
+       
         return view('admin.dailyPlan')->with('employees',$employees)
                                         ->with('worktimes',$worktime)
-                                        ->with('appointments',$appointments);
+                                        ->with('appointments',$appointments)
+                                        ->with('current_time',$current_time);
     }
 
     public function createEmployee(){
         
         return view('admin.addEmployee');
         
+    }
+
+
+    public function addAppointment(Request $request){
+        
+        AppointmentStatus::create([
+            'appointment_id' => (int)$request->appointmentId[0],
+            'customer_id' => Auth::user()->id,
+            'status' => 1
+        ]);
+        return redirect()->back()->with('success','İşleminiz başarıyla tamamlanmıştır.');
     }
     
     public function addEmployee(Request $request,User $user){
@@ -113,6 +123,13 @@ class AdminController extends Controller
     public function destroy($id){
         User::destroy($id);
         return back()->with('success' , 'Record was deleted successfully');
+    }
+
+
+    public function deleteAppoinment(Request $request){
+        
+        AppointmentStatus::where('appointment_id',$request->appointmentId)->delete();
+        return redirect()->back()->with('cancel','Randevu başarıyla iptal ettiniz.');
     }
 
 }

@@ -77,6 +77,8 @@ Route::middleware(['isAdmin'])->group(function() {
     Route::get('/employeeCreate', [AdminController::class , 'createEmployee'])->name('employeeCreatePage');
     Route::post('/employeeAdd' , [AdminController::class , 'addEmployee'])->name('addEmploye');
     Route::get('/dailyPlan', [AdminController::class, 'showDailyPlan'])->name('daily');
+    Route::post('/cancelAppointment', [AdminController::class, 'deleteAppoinment'])->name('deleteAppointment');
+    Route::post('/addedAppointment', [AdminController::class , 'addAppointment'])->name('adminAddAppointment');
    });
 });
 
