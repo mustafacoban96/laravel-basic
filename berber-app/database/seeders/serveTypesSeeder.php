@@ -15,10 +15,10 @@ class ServeTypesSeeder extends Seeder
     {
         $serves = [
             ['name' => 'Sakal Kesimi'],
-            ['name' => 'Saç Kesimi'],
-            ['name' => 'Cilt Bakımı'],
+            ['name' => 'Sac Kesimi'],
+            ['name' => 'Cilt Bakimi'],
             ['name' => 'Boya'],
-            ['name' => 'Fön']
+            ['name' => 'Fon']
         ];
 
 

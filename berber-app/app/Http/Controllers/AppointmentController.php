@@ -82,7 +82,7 @@ class AppointmentController extends Controller
         // // //validate
         
         $serves = $request->input('serves');
-        // dd($serves);
+        
  
         // if return null from modal
         if(empty($serves)){
@@ -94,10 +94,13 @@ class AppointmentController extends Controller
             return redirect()->back()->withErrors(['error' => 'Size ait randevu mevcuttur.Lutfen guncelleme yapınız.']);
         }
         
+
+        /////////Hizmet tipi eklenecek///////////////////////////////////////////////////////////////////
         AppointmentStatus::create([
             'appointment_id' => (int)$request->input('appointmentID'),
             'customer_id' => Auth::user()->id,
-            'status' => 1
+            'status' => 1,
+            'serves' => $request->input('serves')
         ]);
         return redirect()->back()->with('success','İşleminiz başarıyla tamamlanmıştır.');
     }

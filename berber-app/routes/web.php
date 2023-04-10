@@ -80,6 +80,15 @@ Route::middleware(['isAdmin'])->group(function() {
     Route::post('/cancelAppointment', [AdminController::class, 'deleteAppoinment'])->name('deleteAppointment');
     Route::post('/addedAppointment', [AdminController::class , 'addAppointment'])->name('adminAddAppointment');
    });
+
+
+});
+
+//Staff
+Route::middleware(['isStaff'])->group(function(){
+    Route::prefix('staff')->group(function (){
+        Route::get('/', [StaffController::class, 'index'])->name('staffIndex');
+    });
 });
 
 

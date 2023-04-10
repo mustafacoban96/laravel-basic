@@ -34,8 +34,17 @@ class LoginController extends Controller
         if(Auth::user()->role == 1){
             return redirect()->route('aindex');
         }
+
+        elseif(Auth::user()->role == 2){
+            return redirect()->route('staffIndex');
+        }
         // auth()->attempt($request->only('email','password'));
-        return redirect()->route('mainPage');
+       
+        else{
+            return redirect()->route('mainPage');
+        }
+        
+        
     }
 
 

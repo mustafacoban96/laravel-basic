@@ -17,7 +17,12 @@ class AppointmentStatus extends Model
     protected $fillable =[
         'appointment_id',
         'customer_id',
-        'status'
+        'status',
+        'serves'
+    ];
+
+    protected $casts =[
+        'serves' => 'array',
     ];
 
 
