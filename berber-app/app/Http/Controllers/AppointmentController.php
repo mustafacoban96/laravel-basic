@@ -35,6 +35,7 @@ class AppointmentController extends Controller
         //dd(count($employees)) number of employees;
         $appointments = Appointment::where('employee_id',$id)->get();
         
+        
         //dd($appointments[2]->id);
         //dd($appointments[11]['worktime_id']);
         $worktime = Worktime::all();

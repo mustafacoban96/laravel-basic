@@ -1,0 +1,43 @@
+.staff-cancel-appoint{
+    width: 50px;
+    height: 30px;
+    font-size: 10px;
+    background-color: rgb(70, 78, 85);
+    margin-top: 10px;
+    border-radius: 4px;
+    
+}
+.staff-cancel-appoint input{
+    width: 100%;
+    height: 100%;
+    border : none;
+    background-color: rgb(70, 78, 85);
+    cursor: pointer;
+    
+    
+}
+.staff-record-appoint{
+    width: 50px;
+    height: 30px;
+    font-size: 10px;
+    background-color: rgb(30, 194, 74);
+    margin-top: 10px;
+    border-radius: 4px;
+}
+.staff-record-appoint input{
+    width: 100%;
+    height: 100%;
+    border : none;
+    background-color: rgb(30, 194, 74);
+    cursor: pointer;
+    
+    
+}
+.staff-add-appoint{
+    width: 50px;
+    height: 30px;
+    font-size: 10px;
+    margin-top: 10px;
+    background-color: rgb(103, 197, 103);
+    border-radius: 4px;
+}

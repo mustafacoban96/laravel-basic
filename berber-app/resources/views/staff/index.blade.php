@@ -9,7 +9,7 @@
 <div class="navbar-outer">
     <div class="navbar-inner">
           <div class="logo">
-             <a href="{{route('mainPage')}}" class="logo-link">
+             <a href="#" class="logo-link">
                 <img class="logo-img" src="/image/razor-65.png">
              </a>
              <p class="logo-title">Berberim</p>
@@ -30,21 +30,30 @@
  </div>
 
 
- <div class="emp-appoinment-table" style="margin-top: 5%">
+ <div class="emp-appoinment-table" style="margin-top: 1%">
     <table>
         <tr>
             <th>Start time</th>
             <th>End time</th>
             
-            <th style="text-align: center">Appointment</th>
-            <th>Hizmet içeriği</th>
+            <th>Appointment</th>
+            <th>Serve Content</th>
         </tr>
         @for ($i = 0; $i<count($appointments);$i++)
            <tr>
             <td>{{$worktime[$i]->start_time}}</td>
             <td>{{$worktime[$i]->end_time}}</td>
                   @if (AppointmentStatus::where('appointment_id',$appointments[$i]->id)->exists())
-                  <td style="text-align: center">IPTAL ET</td>
+                  <td style="display: flex; flex-direction:row; margin-left: 5px">
+                     <form  action="" >
+                        @csrf
+                        <button class="staff-cancel-appoint" type="submit"><input type="hidden" name="appointmentId[]" value="{{$appointments[$i]->id}}">&#x2715;</button>
+                     </form>
+                     <form action="" >
+                        @csrf
+                        <button class="staff-record-appoint" type="submit"><input type="hidden" name="appointmentId[]" value="{{$appointments[$i]->id}}">&#x2713;</button>
+                     </form>
+                  </td>
                         @if (empty(AppointmentStatus::where('appointment_id',$appointments[$i]->id)->first()->serves))
                             <td>Hizmet tipi yok</td>
                         @else
@@ -54,19 +63,18 @@
                                 @endforeach
                             </td>
                         @endif
-                        
                         {{-- <td>{{$appointments[$i]->id}}</td>    --}}
-                        
-                  @elseif (AppointmentStatus::whereNot('appointment_id',$appointments[$i]->id)->exists())
-                     <td style="text-align: center">EKLE</td>
+                  {{-- @elseif (AppointmentStatus::whereNot('appointment_id',$appointments[$i]->id)->exists()) --}}
                   @else
                      <td style="text-align: center">
-                        <input id="label{{$i}}" type="radio" name="appointmentID" value="{{$appointments[$i]->id}}">
-                        <button data-emp="label{{$i}}" type="button" class="appointment-button">Seç</button>
+                        <form style="margin-left: 30px" action="">
+                           @csrf
+                           <button class="staff-add-appoint" type="submit"><input type="hidden" name="appointmentId[]" value="{{$appointments[$i]->id}}">EKLE</button>
+                     </form>
                      </td>
+                     <td style="text-align: center">-------</td>
                   @endif
                   
-           </tr>
         @endfor
     </table>
     </div>
