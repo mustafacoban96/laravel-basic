@@ -82,6 +82,8 @@ class AppointmentController extends Controller
         // dd(gettype($diffInMinutes));
         // // //validate
         
+        
+        //array
         $serves = $request->input('serves');
         
  
@@ -96,7 +98,7 @@ class AppointmentController extends Controller
         }
         
 
-        /////////Hizmet tipi eklenecek///////////////////////////////////////////////////////////////////
+        
         AppointmentStatus::create([
             'appointment_id' => (int)$request->input('appointmentID'),
             'customer_id' => Auth::user()->id,

@@ -28,8 +28,16 @@
           </div>
     </div>
  </div>
-
-
+ @if(session('success'))
+   <div class="success-area">
+         {{session('success')}}
+   </div>
+@endif
+@if(session('cancel'))
+        <div class="success-area">
+            {{session('cancel')}}
+        </div>
+@endif
  <div class="emp-appoinment-table" style="margin-top: 1%">
     <table>
         <tr>
@@ -45,11 +53,11 @@
             <td>{{$worktime[$i]->end_time}}</td>
                   @if (AppointmentStatus::where('appointment_id',$appointments[$i]->id)->exists())
                   <td style="display: flex; flex-direction:row; margin-left: 5px">
-                     <form  action="" >
+                     <form  action="{{route('staffDelApp')}}" method="POST">
                         @csrf
                         <button class="staff-cancel-appoint" type="submit"><input type="hidden" name="appointmentId[]" value="{{$appointments[$i]->id}}">&#x2715;</button>
                      </form>
-                     <form action="" >
+                     <form action="{{route('staffRecApp')}}" method="POST">
                         @csrf
                         <button class="staff-record-appoint" type="submit"><input type="hidden" name="appointmentId[]" value="{{$appointments[$i]->id}}">&#x2713;</button>
                      </form>
@@ -67,16 +75,16 @@
                   {{-- @elseif (AppointmentStatus::whereNot('appointment_id',$appointments[$i]->id)->exists()) --}}
                   @else
                      <td style="text-align: center">
-                        <form style="margin-left: 30px" action="">
+                        <form style="margin-left: 30px" action="{{route('staffAddApp')}}" method="POST">
                            @csrf
                            <button class="staff-add-appoint" type="submit"><input type="hidden" name="appointmentId[]" value="{{$appointments[$i]->id}}">EKLE</button>
                      </form>
                      </td>
                      <td style="text-align: center">-------</td>
                   @endif
-                  
         @endfor
     </table>
+      
     </div>
     
 @endsection

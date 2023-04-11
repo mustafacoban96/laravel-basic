@@ -88,6 +88,9 @@ Route::middleware(['isAdmin'])->group(function() {
 Route::middleware(['isStaff'])->group(function(){
     Route::prefix('staff')->group(function (){
         Route::get('/', [StaffController::class, 'index'])->name('staffIndex');
+        Route::post('/staffAddAppointment' , [StaffController::class , 'staffAddAppointment'])->name("staffAddApp");
+        Route::post('/staffCancelAppointment' , [StaffController::class, 'staffDeleteAppoinment'])->name("staffDelApp");
+        Route::post('/staffRecordAppointment' , [StaffController::class , 'staffRecordAppointment'])->name('staffRecApp');
     });
 });
 
