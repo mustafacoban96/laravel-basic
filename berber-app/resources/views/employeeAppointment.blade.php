@@ -98,12 +98,11 @@
       </form>
    </div>
    @endif
-
    @if(session('cancel'))
-   <div class="success-area">
-      {{session('cancel')}}
-   </div>
-@endif
+      <div class="success-area">
+         {{session('cancel')}}
+      </div>
+   @endif
  </div>
  <div class="footer">
     <div class="iletişim">

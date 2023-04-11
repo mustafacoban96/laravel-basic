@@ -35,32 +35,32 @@
          </div>
         @endforeach
    </form>
- <div class="footer">
-    <div class="iletişim">
-       <h3>İLETİŞİM</h3>
-       <P>Phone: 123-456-7890</P>
-       <p>Email:  info@mysite.com</p>
-       <div class="social-meida">
-          <a href="#" class="fa fa-facebook"></a>
-          <a href="#" class="fa fa-twitter"></a>
-          <a href="#" class="fa fa-instagram"></a>
-          <a href="#" class="fa fa-snapchat-ghost"></a>
-       </div>
-    </div>
-    <div class="adres">
-       <h3>OUR ADDRESS</h3>
-       <P>500 Terry Francine Street</P>
-       <p>San Francisco, CA 94158</p>
-
-    </div>
-    <div class="calisma-saatleri">
-       <h3>OPENING HOURS</h3>
-       <P>Mon - Fri: 7am - 10pm</P>
-       <p>Saturday: 8am - 10pm</p>
-       <p>​Sunday: 8am - 11pm</p>
-
-    </div>
  </div>
+ <div class="footer">
+   <div class="iletişim">
+      <h3>İLETİŞİM</h3>
+      <P>Phone: 123-456-7890</P>
+      <p>Email:  info@mysite.com</p>
+      <div class="social-meida">
+         <a href="#" class="fa fa-facebook"></a>
+         <a href="#" class="fa fa-twitter"></a>
+         <a href="#" class="fa fa-instagram"></a>
+         <a href="#" class="fa fa-snapchat-ghost"></a>
+      </div>
+   </div>
+   <div class="adres">
+      <h3>OUR ADDRESS</h3>
+      <P>500 Terry Francine Street</P>
+      <p>San Francisco, CA 94158</p>
+
+   </div>
+   <div class="calisma-saatleri">
+      <h3>OPENING HOURS</h3>
+      <P>Mon - Fri: 7am - 10pm</P>
+      <p>Saturday: 8am - 10pm</p>
+      <p>​Sunday: 8am - 11pm</p>
+
+   </div>
 @endsection
 
 
