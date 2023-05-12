@@ -1,0 +1,158 @@
+
+
+.about-page{
+    display: flex;
+    width: 100%;
+    background-image: url('https://images.pexels.com/photos/14257666/pexels-photo-14257666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin-top: 0.4%;
+    margin-bottom: 2%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.about-content{
+    display: flex;
+    flex-direction: row;
+    /* height: 33%; */
+    width: 95%;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.about-content .about-text-area{
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    width: 75%;
+    margin-top: 1%;
+    padding: 2%;
+    line-height: 1.3rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    border: none;
+    border-radius: 30px;
+    opacity: 0.9;
+}
+
+.about-content img{
+    width: 18%;
+    object-fit: cover;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-radius: 55%;
+}
+.about-text-area h1{
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    opacity: 0.8;
+}
+.about-text-area p{
+    font-family: 'Oswald', sans-serif;
+    margin-top: 3%;
+    color: #fff;
+}
+
+@media  screen and (max-width: 1000px) {
+    .about-page{
+        margin-bottom: 4%;
+    }
+
+    .about-text-area h1{
+        font-size: 1.6rem;
+    }
+    .about-text-area p{
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .about-text-area h1{
+        font-size: 1.5rem;
+    }
+    .about-text-area p{
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 850px){
+    .about-page{
+        margin-bottom: 6%;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .about-text-area h1{
+        font-size: 1.45rem;
+    }
+    .about-text-area p{
+        font-size: 0.7rem;
+    }
+    .about-content .about-text-area{
+        
+        line-height: 25px;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .about-text-area h1{
+        font-size: 1.2rem;
+    }
+    .about-text-area p{
+        font-size: 0.6rem;
+    }
+    .about-content .about-text-area{
+        
+        line-height: 1.1rem;
+    }   
+}
+@media screen and (max-width: 620px){
+    .about-page{
+        margin-bottom: 8%;
+    }
+    .about-text-area h1{
+        font-size: 1.1rem;
+        padding: 2%;
+    }
+    .about-text-area p{
+        font-size: 0.5rem;
+        padding: 2%;
+    }   
+}
+@media screen and (max-width:350){
+    .about-text-area h1{
+        font-size: 1.1rem;
+    }
+    .about-text-area p{
+        font-size: 0.45rem;
+    }
+}
+@media  screen and (max-width: 300px) {
+
+    .about-page{
+        margin-bottom: 13%;
+    }
+    
+}
+
+@media screen and (max-width: 280px){
+    .about-page{
+        margin-bottom:25%;
+    }
+
+    .nested-foot-title a{
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 250px){
+    .about-page{
+        margin-bottom:30%;
+    }
+
+    .nested-foot-title a{
+        font-size: 0.5rem;
+    }
+}

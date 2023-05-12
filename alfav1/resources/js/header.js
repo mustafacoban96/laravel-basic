@@ -20,6 +20,7 @@ toggleBtn.addEventListener('click', function(e){
     else{
         item.style.display = 'flex';
         toggleBtn.children[0].className = 'fa fa-close';
+        console.log(toggleBtn.children);
     }
 
     e.stopPropagation();

@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     {{-- css --}}
-    @vite(['resources/css/app.css', 'resources/js/app.js','resources/css/home.css','resources/js/header.js','resources/js/homeSlide.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js','resources/css/home.css','resources/js/header.js','resources/js/homeSlide.js'
+    ,'resources/css/about.css','resources/css/contact.css'])
     <title>@yield('title')</title>
 </head>
 <body>

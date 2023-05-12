@@ -24,7 +24,7 @@
                 <p>Şehitkamil / Gaziantep</p>
         </div>
        <div class="nested-foot">
-            <h3>Offer Request Form</h3>
+            <h3>Size Ulaşalım</h3>
             @csrf
             <form class="request-form" action="#">
                 <input type="text" name="name" placeholder="Name Surname">

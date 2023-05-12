@@ -13,4 +13,16 @@ class PageController extends Controller
 
         return view('home');
     }
+
+
+    public function aboutUs(){
+
+
+        return view('aboutUs');
+    }
+
+
+    public function contactUs(){
+        return view('contactUs');
+    }
 }

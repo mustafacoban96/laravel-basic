@@ -4,7 +4,7 @@ const nextButton = document.querySelector('.next');
 const prevButton = document.querySelector('.prev');
 
 
-var slideLength = picture.children.length-1;
+const slideLength = picture.children.length-1;
 
 // dot
 for(var j = 0; j<slideLength ; j++){
