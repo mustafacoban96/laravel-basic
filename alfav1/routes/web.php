@@ -22,3 +22,5 @@ Route::get('/', function () {
 Route::get('/home' ,[PageController::class, 'homePage'])->name('home');
 Route::get('/aboutUs',[PageController::class,'aboutUs'])->name('aboutUs');
 Route::get('/contactUs', [PageController::class,'contactUs'])->name('contact');
+Route::get('/products', [PageController::class, 'productPage'])->name('products');
+Route::get('/products/{product}',[PageController::class, 'productDetail'])->name('product');

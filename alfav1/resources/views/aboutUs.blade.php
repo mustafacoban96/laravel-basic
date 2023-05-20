@@ -8,7 +8,7 @@
 @section('content')
     <div class="about-page">
         <div class="about-content">
-            <img src="/images/aboutUs.png" alt="">
+            <img src="/images/about_us/aboutUs.png" alt="">
             <div class="about-text-area">
                 <h1>Who are we ?</h1>
                 <p>2023 yılında kurulan bez çanta fabrikamız, çevre dostu malzemeler kullanarak sürdürülebilir ve müşteri memnuniyeti odaklı üretim yapıyor. 
@@ -24,11 +24,11 @@
                 <p>2023 yılında açılan bez çanta fabrikamızın vizyonu, dünya çapında bilinen ve tercih edilen bir marka olmaktır. 
                     Kaliteli, sürdürülebilir ve müşteri memnuniyeti odaklı üretimimizle, çevre dostu ve sağlıklı bir dünya yaratmak için çalışıyoruz.</p>
             </div>
-            <img src="/images/vision.png" alt="">
+            <img src="/images/about_us/vision.png" alt="">
             
         </div>
         <div class="about-content">
-            <img src="/images/mission.png" alt="">
+            <img src="/images/about_us/mission.png" alt="">
             <div class="about-text-area">
                 <h1>Misyon</h1>
                 <p>Bez çanta fabrikamızın misyonu, müşterilerimize çevre dostu, yüksek kaliteli ve estetik ürünler sunmaktır. 

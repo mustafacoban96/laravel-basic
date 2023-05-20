@@ -26,11 +26,13 @@
        <div class="nested-foot">
             <h3>Size Ulaşalım</h3>
             @csrf
-            <form class="request-form" action="#">
-                <input type="text" name="name" placeholder="Name Surname">
-                <input type="text" name = "gsm" placeholder="Phone Number">
-                <input type="email" name="email"  placeholder="E-mail">
-                <button type="submit">Send</button>
+            <form  action="#">
+                <div class="request-form">
+                    <input type="text" name="name" placeholder="Name Surname">
+                    <input type="text" name = "gsm" placeholder="Phone Number">
+                    <input type="email" name="email"  placeholder="E-mail">
+                    <button type="submit">Send</button>
+                </div>
             </form>
        </div>
     </div>

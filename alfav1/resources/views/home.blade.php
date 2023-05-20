@@ -8,19 +8,19 @@
 @section('content')
    <div class="slide-part">
         <div class="slide" id="slides">
-            <img src="/images/bag1.jpg">
+            <img src="/images/slide_images/bag1.jpg">
         </div>
         <div class="slide" id="slides">
-            <img src="/images/bag2.jpg">
+            <img src="/images/slide_images/bag2.jpg">
         </div>
         <div class="slide" id="slides">
-            <img src="/images/bag3.jpg">
+            <img src="/images/slide_images/bag3.jpg">
         </div>
         <div class="slide" id="slides">
-            <img src="/images/bag4.jpg">
+            <img src="/images/slide_images/bag4.jpg">
         </div>
         <div class="slide" id="slides">
-            <img src="/images/bag5.jpg">
+            <img src="/images/slide_images/bag5.jpg">
         </div>
         <div class="slide-controller">
             <a class="prev" >&#10094;</a>
@@ -47,13 +47,13 @@
         <div class="home-content-cards">
                 
             <div class="card-area">
-                <img src="/images/bag7.jpg">
+                <img src="/images/home/bag7.jpg">
             </div>
             <div class="card-area">
-                <img src="/images/bag6.jpg">
+                <img src="/images/home/bag6.jpg">
             </div>
             <div class="card-area">
-                <img src="/images/bag8.jpg">
+                <img src="/images/home/bag8.jpg">
             </div>
         </div>
         <div class="home-text-area">
