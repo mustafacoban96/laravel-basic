@@ -36,26 +36,40 @@ class AdminController extends Controller
         // dd('selam');
         // $formData = $request->all();
         // dd($formData);
+
+        
+        $validationFails = false;
         $user = $request->validate([
-            'tc_num' => ['required', 'numeric' , 'size:11', 'unique:personels,tc_num'],
+            'kimlik_numarası' => ['required', 'numeric' , 'digits:11', 'unique:personels,tc_num'],
             'cinsiyet' =>['required','string'],
-            'name'=>['required','string','max:255'],
-            'surname'=>['required','string','max:255'],
+            'isim'=>['required','string','max:255'],
+            'soyisim'=>['required','string','max:255'],
             'kan_grubu'=>['required','string','max:255'],
-            'telefon'=>['required','numeric','size:12','unique:personels,telefon'],
-            'baba_adi'=>['required','string','max:255'],
+            'telefon'=>['required','numeric','digits:10','unique:personels,telefon'],
+            'baba_adı'=>['required','string','max:255'],
             'dogum_tarihi'=>['required','date','date_format:Y-m-d'],
             'adres'=>['required','string','max:255'],
-            'is_yeri_tipi'=>['required','string','max:255'],
-            'birim_id'=>['required','integer'],
-            'meslek_id'=>['required','integer'],
+            'is_yeri_tipi'=>['required'],
+            'birim_id'=>['required'],
+            'meslek_id'=>['required'],
             'is_giris'=>['required'],
             'maas'=>['required','integer'],
             'maas_tipi'=>['required','string'],
-            'ssk_sicil'=>['required','numeric','size:7']
+            'ssk_sicil'=>['required','numeric','digits:7']
         ]);
 
-        dd($user);
+        $birim_adı=Birim::all()->where('id',$request->birim_id)->first()->name;
+        dd($birim_adı);
+
+        if($validationFails){
+            return redirect()->back()->withInput();
+        }
+
+        else{
+            dd($user);
+        }
+
+        
         dd('selam');
 
         
