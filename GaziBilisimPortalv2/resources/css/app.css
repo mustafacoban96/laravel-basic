@@ -1,0 +1,22 @@
+.text-danger{
+	font-size: 0.9em;
+	margin-top: 3px;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	color:rgba(235, 37, 37, 0.896);
+	
+
+}
+
+.error-area{
+	display: flex;
+	flex-direction: row;
+	text-decoration: none;
+	width: 70%;
+	height: auto;
+	font-family: 'Oswald', sans-serif;
+	color:rgba(235, 37, 37, 0.896);
+	text-align: center;
+	justify-content: center;
+	margin-left: 15%;
+	
+}
