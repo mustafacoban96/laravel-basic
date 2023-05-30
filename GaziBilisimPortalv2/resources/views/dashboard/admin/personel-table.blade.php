@@ -2,20 +2,12 @@
 
 @section('title','Personel Listesi')
 
-
-
 @section('content')
+
 <section class="content-header">
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-       
-      </div>
-      <div class="col-sm-6">
-        <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item active">DataTables</li>
-        </ol>
       </div>
     </div>
   </div><!-- /.container-fluid -->
@@ -35,65 +27,37 @@
               <tr>
                 <th>TC</th>
                 <th>Ad Soyad</th>
-                <th>Cinsiyet</th>
                 <th>Telefon</th>
+                <th>meslek</th>
                 <th>İşyeri</th>
                 <th>Birim</th>
-                <th>İşe Giriş Tarihi</th>
-                <th>İşten Ayrıldı</th>
-                <th>İşten Ayrılma Tarihi</th>
+                <th>İş Giriş Tarihi</th>
                 <th>Durum</th>
+                <th>İşlem</th>
               </tr>
               </thead>
               <tbody>
-              <tr>
-                <td>Tasman</td>
-                <td>Internet Explorer 5.1</td>
-                <td>Mac OS 7.6-9</td>
-                <td>1</td>
-                <td>C</td>
-                <td>C</td>
-                <td>C</td>
-                <td>C</td>
-                <td>C</td>
-                <td>Onaylandı</td>
-              </tr>
-              <tr>
-                <td>Tasman</td>
-                <td>Internet Explorer 5.1</td>
-                <td>Mac OS 7.6-9</td>
-                <td>1</td>
-                <td>C</td>
-                <td>C</td>
-                <td>C</td>
-                <td>C</td>
-                <td>C</td>
-                <td>Onaylandı</td>
-              </tr>
-              <tr>
-                <td>Tasman</td>
-                <td>Internet Explorer 5.1</td>
-                <td>Mac OS 7.6-9</td>
-                <td>1</td>
-                <td>C</td>
-                <td>C</td>
-                <td>C</td>
-                <td>C</td>
-                <td>C</td>
-                <td>Onaylandı</td>
-              </tr>
-              <tr>
-                <td>Tasman</td>
-                <td>Internet Explorer 5.1</td>
-                <td>Mac OS 7.6-9</td>
-                <td>1</td>
-                <td>C</td>
-                <td>C</td>
-                <td>C</td>
-                <td>C</td>
-                <td>C</td>
-                <td>Onaylandı</td>
-              </tr>
+                @foreach ($personels as $personel)
+                  @if ($personel->status_id == 1)
+                    <tr>
+                      <td>{{$personel->tc_num}}</td>
+                      <td>{{$personel->name." ".$personel->surname}}</td>
+                      <td>{{$personel->telefon}}</td>
+                      <td>{{$personel->meslek->name}}</td>
+                      <td>{{$personel->is_yeri_tipi}}</td>
+                      <td>{{$personel->birim->name.'/'.$personel->is_yeri_tipi}}</td>
+                      <td>{{$personel->is_giris}}</td>
+                      <td>
+                        <span class="right badge badge-success">{{$personelStatus->where('id',$personel->status_id)->first()->name}}</span>
+                      </td>
+                      <td>
+                        <a class="btn btn-info btn-sm" href="{{route('adminDisplay',$personel)}}"><i class="fas fa-pencil-alt"></i>Düzenle</a>
+                      </td>
+                    </tr>
+                  @endif
+                  
+                @endforeach
+              
               </tfoot>
             </table>
           </div>

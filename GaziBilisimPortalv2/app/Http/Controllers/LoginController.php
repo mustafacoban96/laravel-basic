@@ -35,6 +35,10 @@ class LoginController extends Controller
             return redirect()->route('adminIndex');
         }
 
+        if(Auth::user()->role == 1){
+            return redirect()->route('superIndex');
+        }
+
     }
 
 

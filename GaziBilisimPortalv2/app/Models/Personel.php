@@ -21,9 +21,9 @@ class Personel extends Model
         'baba_adi',
         'dogum_tarihi',
         'adres',
-        'isyeri_tipi',
-        'birim_name',
-        'job',
+        'is_yeri_tipi',
+        'birim_id',
+        'meslek_id',
         'is_giris',
         'maas',
         'maas_tipi',
@@ -36,12 +36,20 @@ class Personel extends Model
         'status_id'
     ];
 
+    public $timestamps = true;
     public function status_id(){
         return $this->hasOne(PersonelStatus::class);
     }
 
     public function meslekler(){
         return $this->hasOne(Meslek::class);
+    }
+
+    public function meslek(){
+        return $this->belongsTo(Meslek::class, 'meslek_id', 'id');
+    }
+    public function birim(){
+        return $this->belongsTo(Birim::class, 'birim_id','id');
     }
 
     public function birim_id(){
