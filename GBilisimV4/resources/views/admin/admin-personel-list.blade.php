@@ -3,8 +3,8 @@
 
 
 @section('title','Anasayfa')
-@section('base')
-    {{-- <base href="{{\URL::to('/super')}}"> --}}
+@section('anasayfa-button')
+    <a class="nav-link" href="{{route('adminIndex')}}">Anasayfa <span class="sr-only">(current)</span></a>
 @endsection
 @section('route-button')
 
@@ -59,7 +59,7 @@
                       <td>{{$personel->birim->name.'/'.$personel->isyeri_tipi}}</td>
                       <td>{{$personel->is_giris}}</td>
                       <td>
-                        <span class="right badge badge-warning">{{$personelStatus->where('id',$personel->status_id)->first()->name}}</span>
+                        <span class="right badge badge-success">{{$personelStatus->where('id',$personel->status_id)->first()->name}}</span>
                       </td>
                       <td>
                         <a class="btn btn-sm btn-info waves-effect waves-themed" href="{{route('individual',$personel->id)}}">Kişiyi Göster</a>

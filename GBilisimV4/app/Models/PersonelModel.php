@@ -42,10 +42,10 @@ class PersonelModel extends Model
     }
 
     public function meslek(){
-        return $this->belongsTo(Meslek::class, 'meslek_id', 'id');
+        return $this->belongsTo(MeslekModel::class, 'meslek_id', 'id');
     }
     public function birim(){
-        return $this->belongsTo(Birim::class, 'birim_id','id');
+        return $this->belongsTo(BirimModel::class, 'birim_id','id');
     }
 
     

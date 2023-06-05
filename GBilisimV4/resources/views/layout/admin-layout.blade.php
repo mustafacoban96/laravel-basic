@@ -15,6 +15,7 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
         <title>
             @yield('title')
         </title>
+        @yield('base')
         <meta name="description" content="Basic">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
@@ -23,15 +24,19 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
         <!-- Remove Tap Highlight on Windows Phone IE -->
         <meta name="msapplication-tap-highlight" content="no">
         <!-- base css -->
-        <link id="vendorsbundle" rel="stylesheet" media="screen, print" href="css\vendors.bundle.css">
-        <link id="appbundle" rel="stylesheet" media="screen, print" href="css\app.bundle.css">
+        <link id="vendorsbundle" rel="stylesheet" media="screen, print" href="{{ asset('css/vendors.bundle.css') }}">
+        <link id="appbundle" rel="stylesheet" media="screen, print" href="{{ asset('css/app.bundle.css') }}">
         <link id="mytheme" rel="stylesheet" media="screen, print" href="#">
-        <link id="myskin" rel="stylesheet" media="screen, print" href="css\skins\skin-master.css">
+        <link id="myskin" rel="stylesheet" media="screen, print" href='{{asset('css\skins\skin-master.css')}}'>
         <!-- Place favicon.ico in the root directory -->
-        <link rel="apple-touch-icon" sizes="180x180" href="img\favicon\apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="img\favicon\favicon-32x32.png">
-        <link rel="mask-icon" href="img\favicon\safari-pinned-tab.svg" color="#5bbad5">
-        <link rel="stylesheet" media="screen, print" href="css\datagrid\datatables\datatables.bundle.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{asset('img\favicon\apple-touch-icon.png')}}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{asset('img\favicon\favicon-32x32.png')}}">
+        <link rel="mask-icon" href='{{asset('img\favicon\safari-pinned-tab.svg')}}' color="#5bbad5">
+        <link rel="stylesheet" media="screen, print" href="{{asset('css\datagrid\datatables\datatables.bundle.css')}}">
+        <link rel="stylesheet" media="screen, print" href="{{asset('css\notifications\sweetalert2\sweetalert2.bundle.css')}}">
+        <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.10/dist/sweetalert2.min.css" rel="stylesheet">
+        {{-- <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'> --}}
+        
     </head>
     <!-- BEGIN Body -->
     <!-- Possible Classes
@@ -131,7 +136,7 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                 <aside class="page-sidebar">
                     <div class="page-logo">
                         <a href="#" class="page-logo-link press-scale-down d-flex align-items-center position-relative" data-toggle="modal" data-target="#modal-shortcut">
-                            <img src="img\logo.png" alt="SmartAdmin WebApp" aria-roledescription="logo">
+                            <img src="{{asset('img\logo.png')}}" alt="SmartAdmin WebApp" aria-roledescription="logo">
                             <span class="page-logo-text mr-1">Gaziantep Bilişim</span>
                             <span class="position-absolute text-white opacity-50 small pos-top pos-right mr-2 mt-n2"></span>
                             <i class="fal fa-angle-down d-inline-block ml-1 fs-lg color-primary-300"></i>
@@ -148,7 +153,7 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                             </div>
                         </div>
                         <div class="info-card">
-                            <img src="img\demo\avatars\avatar-admin.png" class="profile-image rounded-circle" alt="Dr. Codex Lantern">
+                            <img src="{{asset('img\demo\avatars\avatar-admin.png')}}" class="profile-image rounded-circle" alt="Dr. Codex Lantern">
                             <div class="info-card-text">
                                 <a href="#" class="d-flex align-items-center text-white">
                                     <span class="text-truncate text-truncate-sm d-inline-block">
@@ -157,41 +162,19 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                                 </a>
                                 <span class="d-inline-block text-truncate text-truncate-sm">Gaziantep, Turkey</span>
                             </div>
-                            <img src="img\card-backgrounds\cover-2-lg.png" class="cover" alt="cover">
+                            <img src="{{asset('img\card-backgrounds\cover-2-lg.png')}}" class="cover" alt="cover">
                             <a href="#" onclick="return false;" class="pull-trigger-btn" data-action="toggle" data-class="list-filter-active" data-target=".page-sidebar" data-focus="nav_filter_input">
                                 <i class="fal fa-angle-down"></i>
                             </a>
                         </div>
                         <ul id="js-nav-menu" class="nav-menu">
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
                             <li>
                                 <a href="#" title="Miscellaneous" data-filter-tags="miscellaneous">
                                     <i class="fal fa-globe"></i>
-                                    <span class="nav-link-text" data-i18n="nav.miscellaneous">İşlemler</span>
+                                    <span class="nav-link-text" data-i18n="nav.miscellaneous">Menü</span>
                                 </a>
                                 <ul>
-                                    <li>
-                                        <a href="miscellaneous_fullcalendar.html" title="FullCalendar" data-filter-tags="miscellaneous fullcalendar">
-                                            <span class="nav-link-text" data-i18n="nav.miscellaneous_fullcalendar">Yeni Kayıt</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="miscellaneous_lightgallery.html" title="Light Gallery" data-filter-tags="miscellaneous light gallery">
-                                            <span class="nav-link-text" data-i18n="nav.miscellaneous_light_gallery">Light Gallery</span>
-                                            <span class="dl-ref label bg-primary-500 ml-2">61 KB</span>
-                                        </a>
-                                    </li>
+                                    @yield('route-button')
                                 </ul>
                             </li>
                             
@@ -212,7 +195,7 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                         <!-- we need this logo when user switches to nav-function-top -->
                         <div class="page-logo">
                             <a href="#" class="page-logo-link press-scale-down d-flex align-items-center position-relative" data-toggle="modal" data-target="#modal-shortcut">
-                                <img src="img\logo.png" alt="SmartAdmin WebApp" aria-roledescription="logo">
+                                <img src="{{asset('img\logo.png')}}" alt="SmartAdmin WebApp" aria-roledescription="logo">
                                 <span class="page-logo-text mr-1">SmartAdmin WebApp</span>
                                 <span class="position-absolute text-white opacity-50 small pos-top pos-right mr-2 mt-n2"></span>
                                 <i class="fal fa-angle-down d-inline-block ml-1 fs-lg color-primary-300"></i>
@@ -242,14 +225,24 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                                 <i class="ni ni-menu"></i>
                             </a>
                         </div>
-                        <div class="search">
+                        {{-- <div class="search">
                             <form class="app-forms hidden-xs-down" role="search" action="page_search.html" autocomplete="off">
                                 <input type="text" id="search-field" placeholder="Search for anything" class="form-control" tabindex="1">
                                 <a href="#" onclick="return false;" class="btn-danger btn-search-close js-waves-off d-none" data-action="toggle" data-class="mobile-search-on">
                                     <i class="fal fa-times"></i>
                                 </a>
                             </form>
-                        </div>
+                        </div> --}}
+                            
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <div class="collapse navbar-collapse" id="navbarColor03">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                        @yield('anasayfa-button')
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
                         <div class="ml-auto d-flex">
                             <!-- activate app search icon (mobile) -->
                             <div class="hidden-sm-up">
@@ -268,7 +261,7 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                             <!-- app user menu -->
                             <div>
                                 <a href="#" data-toggle="dropdown" title="drlantern@gotbootstrap.com" class="header-icon d-flex align-items-center justify-content-center ml-2">
-                                    <img src="img\demo\avatars\avatar-admin.png" class="profile-image rounded-circle" alt="Dr. Codex Lantern">
+                                    <img src="{{asset('img\demo\avatars\avatar-admin.png')}}" class="profile-image rounded-circle" alt="Dr. Codex Lantern">
                                     <!-- you can also add username next to the avatar with the codes below:
 									<span class="ml-1 mr-1 text-truncate text-truncate-header hidden-xs-down">Me</span>
 									<i class="ni ni-chevron-down hidden-xs-down"></i> -->
@@ -277,21 +270,19 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                                     <div class="dropdown-header bg-trans-gradient d-flex flex-row py-4 rounded-top">
                                         <div class="d-flex flex-row align-items-center mt-1 mb-1 color-white">
                                             <span class="mr-2">
-                                                <img src="img\demo\avatars\avatar-admin.png" class="rounded-circle profile-image" alt="Dr. Codex Lantern">
+                                                <img src="{{asset('img\demo\avatars\avatar-admin.png')}}" class="rounded-circle profile-image" alt="Dr. Codex Lantern">
                                             </span>
                                             <div class="info-card-text">
-                                                <div class="fs-lg text-truncate text-truncate-lg">Dr. Codex Lantern</div>
-                                                <span class="text-truncate text-truncate-md opacity-80">drlantern@gotbootstrap.com</span>
+                                                <div class="fs-lg text-truncate text-truncate-lg">admin</div>
+                                                <span class="text-truncate text-truncate-md opacity-80">Gaziantep Bilişim</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="dropdown-divider m-0"></div>
-                                    <a href="#" class="dropdown-item" data-action="app-reset">
-                                        <span data-i18n="drpdwn.reset_layout">Reset Layout</span>
-                                    </a>
-                                    <a href="#" class="dropdown-item" data-toggle="modal" data-target=".js-modal-settings">
+                                    
+                                    {{-- <a href="#" class="dropdown-item" data-toggle="modal" data-target=".js-modal-settings">
                                         <span data-i18n="drpdwn.settings">Settings</span>
-                                    </a>
+                                    </a> --}}
                                     <div class="dropdown-divider m-0"></div>
                                     <a href="#" class="dropdown-item" data-action="app-fullscreen">
                                         <span data-i18n="drpdwn.fullscreen">Fullscreen</span>
@@ -301,7 +292,7 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                                         <span data-i18n="drpdwn.print">Print</span>
                                         <i class="float-right text-muted fw-n">Ctrl + P</i>
                                     </a>
-                                    <div class="dropdown-multilevel dropdown-multilevel-left">
+                                    {{-- <div class="dropdown-multilevel dropdown-multilevel-left">
                                         <div class="dropdown-item">
                                             Language
                                         </div>
@@ -313,11 +304,11 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                                             <a href="#?lang=jp" class="dropdown-item" data-action="lang" data-lang="jp">日本語</a>
                                             <a href="#?lang=ch" class="dropdown-item" data-action="lang" data-lang="ch">中文</a>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <div class="dropdown-divider m-0"></div>
-                                    <a class="dropdown-item fw-500 pt-3 pb-3" href="page_login.html">
+                                    <a class="dropdown-item fw-500 pt-3 pb-3" href={{route('logout')}}>
                                         <span data-i18n="drpdwn.page-logout">Logout</span>
-                                        <span class="float-right fw-n">&commat;codexlantern</span>
+                                        
                                     </a>
                                 </div>
                             </div>
@@ -353,7 +344,7 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                                 <div class="modal-body">
                                     <ul class="app-list w-auto h-auto p-0 text-left">
                                         <li>
-                                            <a href="intel_introduction.html" class="app-list-item text-white border-0 m-0">
+                                            <a href="" class="app-list-item text-white border-0 m-0">
                                                 <div class="icon-stack">
                                                     <i class="base base-7 icon-stack-3x opacity-100 color-primary-500 "></i>
                                                     <i class="base base-7 icon-stack-2x opacity-100 color-primary-300 "></i>
@@ -364,7 +355,7 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                                                 </span>
                                             </a>
                                         </li>
-                                        <li>
+                                        {{-- <li>
                                             <a href="page_inbox_general.html" class="app-list-item text-white border-0 m-0">
                                                 <div class="icon-stack">
                                                     <i class="base base-7 icon-stack-3x opacity-100 color-success-500 "></i>
@@ -375,8 +366,8 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                                                     Inbox
                                                 </span>
                                             </a>
-                                        </li>
-                                        <li>
+                                        </li> --}}
+                                        {{-- <li>
                                             <a href="intel_introduction.html" class="app-list-item text-white border-0 m-0">
                                                 <div class="icon-stack">
                                                     <i class="base base-7 icon-stack-2x opacity-100 color-primary-300 "></i>
@@ -386,7 +377,7 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                                                     Add More
                                                 </span>
                                             </a>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                 </div>
                             </div>
@@ -470,10 +461,10 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
             <label for="menu_open" class="menu-open-button ">
                 <span class="app-shortcut-icon d-block"></span>
             </label>
-            <a href="#" class="menu-item btn" data-toggle="tooltip" data-placement="left" title="Scroll Top">
+            {{-- <a href="#" class="menu-item btn"  data-toggle="tooltip" data-placement="left" title="Scroll Top">
                 <i class="fal fa-arrow-up"></i>
-            </a>
-            <a href="page_login.html" class="menu-item btn" data-toggle="tooltip" data-placement="left" title="Logout">
+            </a> --}}
+            <a href={{route('logout')}} class="menu-item btn" data-toggle="tooltip" data-placement="left" title="Logout">
                 <i class="fal fa-sign-out"></i>
             </a>
             <a href="#" class="menu-item btn" data-action="app-fullscreen" data-toggle="tooltip" data-placement="left" title="Full Screen">
@@ -482,9 +473,9 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
             <a href="#" class="menu-item btn" data-action="app-print" data-toggle="tooltip" data-placement="left" title="Print page">
                 <i class="fal fa-print"></i>
             </a>
-            <a href="#" class="menu-item btn" data-action="app-voice" data-toggle="tooltip" data-placement="left" title="Voice command">
+            {{-- <a href="#" class="menu-item btn" data-action="app-voice" data-toggle="tooltip" data-placement="left" title="Voice command">
                 <i class="fal fa-microphone"></i>
-            </a>
+            </a> --}}
         </nav>
         <!-- END Quick Menu -->
         <!-- BEGIN Messenger -->
@@ -1166,8 +1157,8 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
 						+ waves.js (extension)
 						+ smartpanels.js (extension)
 						+ src/../jquery-snippets.js (core) -->
-        <script src="js\vendors.bundle.js"></script>
-        <script src="js\app.bundle.js"></script>
+        <script src="{{asset('js\vendors.bundle.js')}}"></script>
+        <script src="{{asset('js\app.bundle.js')}}"></script>
         <!-- datatble responsive bundle contains: 
 	+ jquery.dataTables.js
 	+ dataTables.bootstrap4.js
@@ -1188,7 +1179,8 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
 	+ dataTables.select.js							
 	+ datatables.styles.app.js
 	+ datatables.styles.buttons.app.js -->
-        <script src="js\datagrid\datatables\datatables.bundle.js"></script>
+        <script src="{{asset('js\datagrid\datatables\datatables.bundle.js')}}"></script>
+        {{-- <script src="js\notifications\sweetalert2\sweetalert2.bundle.js"></script> --}}
         <script>
             /* demo scripts for change table color */
             /* change background */
@@ -1218,6 +1210,31 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
             });
 
         </script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.10/dist/sweetalert2.all.min.js"></script>
+<script>
+    $(document).ready(function()
+    {
+
+        "use strict";
+
+        //A custom positioned dialog
+
+        @if(Session::has('success'))
+                        Swal.fire(
+                            {
+                                position: "top-end",
+                                type: "success",
+                                title: '{{ Session::get('success') }}',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                    @endif
+                })
+
+ 
+
+</script>
         
         @yield('script')
     </body>

@@ -3,8 +3,8 @@
 
 
 @section('title','Anasayfa')
-@section('base')
-    {{-- <base href="{{\URL::to('/super')}}"> --}}
+@section('anasayfa-button')
+    <a class="nav-link" href="{{route('adminIndex')}}">Anasayfa <span class="sr-only">(current)</span></a>
 @endsection
 @section('route-button')
 
@@ -49,7 +49,7 @@
                         </thead>
                         <tbody>
                             @foreach ($personels as $personel)
-                  @if ($personel->status_id == 1)
+                  @if ($personel->status_id != 1)
                     <tr>
                       <td>{{$personel->tc_num}}</td>
                       <td>{{$personel->name." ".$personel->surname}}</td>

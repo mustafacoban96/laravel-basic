@@ -9,7 +9,7 @@ class FileModel extends Model
 {
     use HasFactory;
 
-    protected $table= 'files';
+    protected $table= 'personel_files';
 
     protected $fillable=[
         'file_name',
@@ -25,6 +25,6 @@ class FileModel extends Model
 
     public function filePersonelID(){
 
-        return $this->belongsTo(Personel::class ,'personel_id','id');
+        return $this->belongsTo(PersonelModel::class ,'personel_id','id');
     }
 }
