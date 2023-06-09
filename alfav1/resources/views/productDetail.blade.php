@@ -6,21 +6,19 @@
     Product
 @endsection
 
-
-
 @section('content')
     <h2 style="text-align: center">Ürün detayları</h2>
     <div class="product-detail">
         <div class="product-image-area">
             <div class="product-big-image">
-                <a>&#10094;</a>
-                <img src={{$product_images[0]}}>
-                <a>&#10095;</a>
+                <a id="prev">&#10094;</a>
+                <img id="big-image" src={{$product_images[0]}}>
+                <a id="next">&#10095;</a>
             </div>
             <div class="product-small-image">
                 @foreach ($product_images as $image)
                 <div class="small-product-pic">
-                    <img src={{$image}}>
+                    <img id="small-picture" src={{$image}}>
                 </div>
                 @endforeach
             </div>

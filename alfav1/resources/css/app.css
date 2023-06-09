@@ -129,14 +129,14 @@
 
 .main-header-img{
     display: flex;
-    width: 10%;
-    justify-content:center;
+    width: 25%;
+    justify-content:left;
     align-items: center;
 }
 
 .main-header-img img{
-    height: 75px;
-    object-fit: cover;
+    width: 80%;
+    object-fit: contain;
     margin-right: 10px;
 }
 

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     {{-- css --}}
     @vite(['resources/css/app.css', 'resources/js/app.js','resources/css/home.css','resources/js/header.js','resources/js/homeSlide.js'
-    ,'resources/css/about.css','resources/css/contact.css','resources/css/product.css','resources/css/productDetail.css'])
+    ,'resources/css/about.css','resources/css/contact.css','resources/css/product.css','resources/css/productDetail.css','resources/js/productDetailImg.js'])
     <title>@yield('title')</title>
 </head>
 <body>

@@ -4,7 +4,7 @@
 <div class="footer-container">
     <div class="foot">
        <div class="nested-foot">
-            <h3>Contact</h3>
+            <h3>İletişim</h3>
             <div class="nested-foot-title">
                 <a href="#"><i class="fa fa-phone"></i>0531 969 48 82</a>
                 <a href="#"><i class="fa fa-envelope"></i>alfa@bez.com.tr</a>
@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="nested-foot">
-                <h3>Address</h3>
+                <h3>Adres</h3>
                 <P>2. Organize Sanayi Bölgesi</P>
                 <p>Celal Doğan Bulvarı 2 Nolu Cadde No:22</p>
                 <p>Şehitkamil / Gaziantep</p>
@@ -37,7 +37,7 @@
        </div>
     </div>
     <div class="post-footer">
-        <p>All rights reserved © 2023 Alfa Nonwoven</p>
+        <p>All rights reserved © 2023 Alfa Bag</p>
     </div>
     
 </div>

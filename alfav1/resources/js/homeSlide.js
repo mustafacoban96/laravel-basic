@@ -25,7 +25,6 @@ function nextSlide(){
     if(slaytNo > slideLength-1){
         slaytNo = 0;
     }
-    
     showSlide(slaytNo);
 }
 function previousSlide(){

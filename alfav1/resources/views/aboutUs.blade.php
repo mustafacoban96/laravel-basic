@@ -10,7 +10,7 @@
         <div class="about-content">
             <img src="/images/about_us/aboutUs.png" alt="">
             <div class="about-text-area">
-                <h1>Who are we ?</h1>
+                <h1>Biz</h1>
                 <p>2023 yılında kurulan bez çanta fabrikamız, çevre dostu malzemeler kullanarak sürdürülebilir ve müşteri memnuniyeti odaklı üretim yapıyor. 
                     Teknolojik yeniliklerle özgün ürünler ortaya koyuyor ve kaliteli kontrol aşamaları uygulayarak müşterilerin beklentilerini karşılamayı hedefliyoruz. 
                     Çalışanların mutluluğunu ve gelişimini destekleyerek takım ruhu oluşturuyoruz. 
