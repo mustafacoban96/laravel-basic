@@ -24,8 +24,8 @@
             </div>
         </div>
         <div class="product-features-area">
-            <h3>ÜRÜN ADI: ATLET TİPİ MARKET ve ALIŞVERİŞ ÇANTASI</h3>
-            <p>Ürün Tanımı: {{$product->product_description}}</p>
+            <h3>ÜRÜN ADI: {{$product->product_description}}</h3>
+            {{-- <p>Ürün Tanımı: {{$product->product_description}}</p> --}}
             <p>Çanta Eni: {{$product->width}}</p>
             <p>Çanta Yüksekliği: {{$product->height}}</p>
             <p>Körük: {{$product->gusset}}</p>

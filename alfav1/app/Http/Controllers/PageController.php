@@ -6,15 +6,14 @@ use App\Models\DetailImagePath;
 use App\Models\Product;
 use App\Models\ProductDetail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 {
     public function homePage(){
 
-
-
-
+        
         return view('home');
     }
 

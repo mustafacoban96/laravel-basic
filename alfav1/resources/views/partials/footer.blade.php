@@ -4,7 +4,7 @@
 <div class="footer-container">
     <div class="foot">
        <div class="nested-foot">
-            <h3>İletişim</h3>
+            <h3>@lang('footer.1')</h3>
             <div class="nested-foot-title">
                 <a href="#"><i class="fa fa-phone"></i>0531 969 48 82</a>
                 <a href="#"><i class="fa fa-envelope"></i>alfa@bez.com.tr</a>
@@ -18,13 +18,13 @@
             </div>
         </div>
         <div class="nested-foot">
-                <h3>Adres</h3>
-                <P>2. Organize Sanayi Bölgesi</P>
-                <p>Celal Doğan Bulvarı 2 Nolu Cadde No:22</p>
-                <p>Şehitkamil / Gaziantep</p>
+                <h3>@lang('footer.2')</h3>
+                <P>@lang('footer.3')</P>
+                <p>@lang('footer.4')</p>
+                <p>@lang('footer.5')</p>
         </div>
        <div class="nested-foot">
-            <h3>Size Ulaşalım</h3>
+            <h3>@lang('footer.6')</h3>
             @csrf
             <form  action="#">
                 <div class="request-form">

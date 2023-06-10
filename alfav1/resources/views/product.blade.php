@@ -27,7 +27,27 @@
             </a>    
         </div>
     </div>
-    <div class="product-area2">
+    <div class="product-area">
+        <div class="product">
+            <a href="products/{{$products[3]->id}}">
+                <img class="kategori-pic" src={{$products[3]->image_path}}>
+                <span class="kategori-title">{{$products[3]->name}}</span>
+            </a>    
+        </div>
+        <div class="product">
+            <a href="products/{{$products[4]->id}}">
+                <img class="kategori-pic" src={{$products[4]->image_path}}>
+                <span class="kategori-title">{{$products[4]->name}}</span>
+            </a>    
+        </div>
+        <div class="product">
+            <a href="products/{{$products[2]->id}}">
+                <img class="kategori-pic" src={{$products[2]->image_path}}>
+                <span class="kategori-title">{{$products[2]->name}}</span>
+            </a>    
+        </div>
+    </div>
+    {{-- <div class="product-area2">
         <div class="product">
             <a href="products/{{$products[3]->id}}">
                 <img class="kategori-pic" src={{asset($products[3]->image_path)}}>
@@ -40,5 +60,5 @@
                 <span class="kategori-title">{{$products[4]->name}}</span>
             </a>    
         </div>
-    </div>
+    </div> --}}
 @endsection
