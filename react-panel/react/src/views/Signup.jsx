@@ -1,6 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axiosClient from '../axios-client';
+import {useStateContext} from '../contexts/ContextProvider'
 
 
 const Signup = ()=> {
@@ -9,9 +10,14 @@ const Signup = ()=> {
   const emailRef = useRef();
   const passwordRef = useRef();
   const confirmPasswordRef = useRef();
+  const {setUser,setToken} = useStateContext();
+  const [errors, setErrors] = useState(null);
+  
   
 
+
     const onSubmit = (e) =>{
+      
       e.preventDefault();
 
       const payload = {
@@ -19,18 +25,21 @@ const Signup = ()=> {
         email: emailRef.current.value,
         password: passwordRef.current.value,
         confirm_password: confirmPasswordRef.current.value
-      }
+      };
       
       axiosClient.post('/signup', payload)
       .then(({data}) =>{
         setUser(data.user)
         setToken(data.token)
+        
       })
       .catch(err =>{
+        
         const response = err.response;
         // 422 validation error
         if(response && response.status == 422){
             console.log( response.data.errors);
+            setErrors(response.data.errors);
         }
       })
     }
@@ -41,6 +50,13 @@ const Signup = ()=> {
         <div className='form'>
             <form onSubmit={onSubmit}>
                 <h1 className='title'>Signup for free</h1>
+                {
+                  errors && <div className='alert'>
+                      {Object.keys(errors).map(key =>(
+                        <p key={key}>{errors[key][0]}</p>
+                      ))}
+                  </div>
+                }
                 <input ref={nameRef} type='text' placeholder='Fullname'/>
                 <input ref={emailRef} type='email' placeholder='Email Address'/>
                 <input ref={passwordRef} type='password' placeholder='Password'/>

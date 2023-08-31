@@ -20,9 +20,9 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password'])
         ]);
-
+        
         $token = $user->createToken('main')->plainTextToken;
-
+       
         return response(compact('user','token')); // the user and token go to the signup --axiosClient's data objects that was parameter.
     }
 
