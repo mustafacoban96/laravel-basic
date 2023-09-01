@@ -32,7 +32,8 @@ class SignupRequest extends FormRequest
                 ->letters()
                 ->symbols()
                 ->numbers()
-            ]
+            ],
+            'password_confirmation' => 'required|min:8' //422 i solved this validatation rule (the line)
         ];
     }
 }
