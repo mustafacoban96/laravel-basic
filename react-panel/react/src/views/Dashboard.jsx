@@ -6,6 +6,6 @@ const Dashboard = () => {
       dashboard
     </div>
   )
-}
+}    
 
 export default Dashboard
