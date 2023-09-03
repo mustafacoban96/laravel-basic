@@ -54,7 +54,7 @@ class AuthController extends Controller
         $user->tokens->each(function ($token, $key) {
             $token->delete();
         });
-
+        
         return response()->noContent();
     }
 }
